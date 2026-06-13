@@ -1,0 +1,309 @@
+<!DOCTIPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+        content="width=devece-width,
+        initial-scale=1.0>"
+        <title>T.Tファーム</title>
+        
+        <style>
+            body{
+                margin:0;
+                font-family:"Yu Gothic","Hiragino Sans",sans-serif;
+                background:#fffaf0;
+                color:#3e2f24
+            }
+
+            header{
+                background:#f6d77a;
+                color:#4e342e;
+                text-align:center;
+                padding:22px;
+            }
+
+            header h1{
+                margin:0;
+                font-size:42px;
+            }
+            
+            .logo-tt{
+                font-family:'Great Vibes',cursive;
+                margin-right:10px;
+            }
+
+            .logo-ja{
+                font-falmilly:"Yu Gothic","Hiragino Sans",sans-serif;
+                font-weight:bold;
+            }
+             
+            header p{
+                margin:8px 0 0;
+                font-size:18px;
+            }
+
+            .menu-button{
+                display:none;
+                position:fixed;
+                top:30px;
+                left:15px;
+                z-index:1001;
+                background:#33691E;
+                color:white;
+                border:none;
+                font-size:28px;
+                padding:8px 14px;
+                cursor:pointer;
+                border-radius:6px;
+            }
+
+            nav{
+                background:#33691E;
+                display:flex;
+                justify-content:center;
+                flex-wrap:wrap;
+            }
+
+            nav a{
+                color:white;
+                text-decoration:none;
+                padding:12px 20px;
+                font-weight:bold;
+                border-right:1px solid
+                rgba(255,255,255,0.25);
+            }
+            nav a:hover{
+                background:#558B2F;
+            }
+
+            @media(max-width:768px){
+
+                .menu-button{
+                    display:block;
+                }
+
+                nav{
+                    position:fixed;
+                    top:0;
+                    left:-260px;
+                    width:240px;
+                    height:100vh;
+                    background:#33691E;
+                    display:flex;
+                    flex-direction:column;
+                    justify-content:flex-start;
+                    padding-top:70px;
+                    transition:0.3s;
+                    z-index:1000;
+                }
+
+                nav.open{
+                    left:0;
+                }
+
+                nav a{
+                    border-right:none;
+                    border-buttom:1px solid rgba(255,255,255,0.25);
+                    text-align:left;
+                    padding:16px 20px;
+                }
+            }
+
+            .hero{
+                background-image:url("./images/main.jpg");
+                background-size:100% auto;
+                background-repeat:no-repeat;
+                background-position:top center;
+                height:850px;
+                background-color:#fffaf0;
+            }
+    
+            .message{
+                max-width:900px;
+                margin:40px auto;
+                padding:30px;
+                text-align:center;
+                background:white;
+                border-radius:12px;
+                box-shadow:0 4px 12px rgba(0,0,0,0.1);
+            }
+
+            .message h2{
+                color:#6d8f3f;
+                font-size:34px;
+            }
+
+            .message p{
+                font-size:18px;
+                line-height:2;
+            }
+
+            .cards{
+                display:grid;
+                grid-template-columns:repeat(3,1fr);
+                gap:30px;
+                max-width:1200px;
+                margin:50px auto;
+                padding:0 20px;
+            }
+
+            .card{
+                max-width:500px;
+                margin:auto;
+                background:white;
+                border-radius:12px;
+                overflow:hidden;
+                box-shadow:0 4px 10px rgba(0,0,0,0.1)
+            }
+
+            .card img{
+                width:100%;
+                height:auto;
+                display:block;
+            }
+
+            .card h3{
+                text-align:center;
+                color:#6d8f3f;
+            } 
+
+            .card p{
+                padding:0 20px 20px;
+                line-height:1.8;
+            }
+
+            @media(max-width:900px){
+                .cards{
+                    grid-template-columns:repeat(2,1fr);
+                }
+            }
+
+            @media(max-width:600px){
+                .cards{
+                    grid-template-columns:1fr;
+                }
+            }
+
+            footer{
+                background:#6d8f3f;
+                color:white;
+                text-align:center;
+                padding:20px;
+            }
+
+            @media(max-width:768px){
+                header h1{
+                    font-size:30px;
+                }
+                
+                nav a{
+                    width:100%;
+                    text-align:center;
+                    border-bottom:1px solid
+                    rgba(255,255,255,0.2);
+                }
+
+                .hero{
+                    height:360px;
+                }
+
+                .message{
+                    margin:25px 15px;
+                }
+
+                .message h2{
+                    font-size:26px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <header>
+            <h1>
+                <span class="logo-tt">T.T</span>
+                <span class="logo-ja">ファーム</span>
+            </h1>
+            <p>農業の価値を未来へ</p>
+        </header>
+
+        <button class="menu-button"
+        onclick="toggleMenu()">≡</button>
+
+        <nav id="nav-menu">
+            <a href="index.html">ホーム</a>
+            <a href="about.html">農園紹介</a>
+            <a href="gallery.html">ギャラリー</a>
+            <a href="#">農家の一年</a>
+            <a href="#">農園日記</a>
+            <a href="#">クイズ</a>
+            <a href="#">イベント</a>
+            <a href="#">販売</a>
+            <a href="#">お問い合わせ</a>
+        </nav>
+
+        <section class="hero"></section>
+
+        <section class="message">
+            <h2>ようこそT.Tファームへ！</h2>
+
+            <p>
+                私たちは信州の豊かな自然の中で、さまざまな作物を育てています。
+                「育てる楽しさ」と「食べる喜び」を皆さまにお届けします。
+            </p>
+        </section>
+
+        <section class="cards">
+
+            <div class="card">
+                <img src="images/grape.jpg" alt="ぶどう">
+                <h3>ぶどう</h3>
+                <p>
+                    信州の豊かな自然の中で育ったぶどう。
+                    季節ごとの作業や成長の様子をご紹介します。
+                </p>
+            </div>
+
+            <div class="card">
+                <img src="images/shiitake.jpg" alt="しいたけ">
+                <h3>しいたけ</h3>
+                <p>
+                    原木栽培ならではの魅力や、収穫の様子をご紹介します。
+                </p>
+            </div>
+
+        </section>
+        
+        <section class="cards">
+            <div class="card">
+                <h3>農園紹介</h3>
+                <p>信州の自然の中で育つ作物や、私たちの思いを紹介します。</p>
+            </div>
+
+            <div class="card">
+                <h3>ギャラリー</h3>
+                <p>畑の風景や作物の成長、季節ごとの写真をお届けします。</p>
+            </div>
+
+            <div class="card">
+                <h3>クイズ・ゲーム</h3>
+                <p>農園や作物について、楽しく学べるコンテンツを準備中です。</p>
+            </div>
+
+        </section>
+     
+        <footer>
+            © T.Tファーム
+        </footer>
+       
+        <script>
+            function toggleMenu(){
+                const menu =
+                document.getElementById("nav-menu");
+                menu.classList.toggle("open");
+            }
+        </script>
+
+    </body>
+</html>
