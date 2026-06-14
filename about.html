@@ -1,4 +1,4 @@
-<!DOCTIPE html>
+<!DOCTYPE html>
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
@@ -33,7 +33,7 @@
             }
 
             .logo-ja{
-                font-falmily:"Yu Gothic","Hiragino Sans",sans-serif;
+                font-family:"Yu Gothic","Hiragino Sans",sans-serif;
                 font-weight:bold;
             }
 
@@ -103,7 +103,7 @@
 
                 nav a{
                     border-right:none;
-                    border-buttom:1px solid rgba(255,255,255,0.25);
+                    border-bottom:1px solid rgba(255,255,255,0.25);
                     text-align:left;
                     padding:16px 20px;
                 }
@@ -223,12 +223,12 @@
             <a href="index.html">ホーム</a>
             <a href="about.html">農園紹介</a>
             <a href="gallery.html">ギャラリー</a>
-            <a href="#">農家の一年</a>
-            <a href="#">農園日記</a>
-            <a href="#">クイズ</a>
-            <a href="#">イベント</a>
-            <a href="#">販売</a>
-            <a href="#">お問い合わせ</a>
+            <a href="year.html">農家の一年</a>
+            <a href="diary.html">農園日記</a>
+            <a href="quiz.html">クイズ</a>
+            <a href="event.html">イベント</a>
+            <a href="https://ttfarm.theshop.jp" target="_blank">購入（外部サイト）</a>
+            <a href="contact.html">お問い合わせ</a>
         </nav>
 
         <div class="section">
@@ -272,8 +272,23 @@
         </div>
 
     　　<footer>
-            © T.Tファーム
+             <p>
+                <a href="https://lin.ee/XFZeWaB">LINE</a> |
+                <a href="https://youtube.com/channel/UCWCrfZPdQvZXiJXD6ffQQnA?si=4Xva8m6RVkRZvQrc">YouTube</a> |
+                <a href="https://ttfarm.theshop.jp">オンラインショップ</a>　｜
+                <a href="contact.html">お問い合わせ</a>
+            </p>
+
+            <p>© T.Tファーム</p>
         </footer>
+
+        <script>
+            function toggleMenu(){
+                const menu =
+                document.getElementById("nav-menu");
+                menu.classList.toggle("open");
+            }
+        </script>
 
     </body>
 </html>
