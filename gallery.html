@@ -1,10 +1,9 @@
-<!DOCTIPE html>
+<!DOCTYPE html>
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport"
-        content="width=devece-width,
-        initial-scale=1.0>"
+        content="width=devece-width, initial-scale=1.0>"
         <title>T.Tファーム|ギャラリー</title>
         
         <style>
@@ -33,7 +32,7 @@
             }
 
             .logo-ja{
-                font-falmilly:"Yu Gothic","Hiragino Sans",sans-serif;
+                font-family:"Yu Gothic","Hiragino Sans",sans-serif;
                 font-weight:bold;
             }
 
@@ -88,10 +87,78 @@
                 margin-bottom:30px;
             }
 
+            .category-buttons{
+                display:flex;
+                justify-content:center;
+                flex-wrap:wrap;
+                gap:10px;
+                margin-bottom:30px;
+            }
+
+            .category-buttons button{
+                background:#6d8f3f;
+                color:white;
+                border:none;
+                padding:10px 18px;
+                font-weight:bold;
+                cursor:pointer;
+            }
+
+            .category-buttons button:hover,
+            .category-buttons button.active{
+                background:#33691E;
+            }
+
             .gallery{
                 display:grid;
                 grid-template-columns:repeat(3,1fr);
                 gap:25px;
+            }
+
+            .category-card{
+                cursor:pointer;
+            }
+
+            .category-card:hover{
+                transform:translateY(-4px);
+                transition:0.3s
+            }
+
+            .back-button{
+                background:#6d8f3f;
+                color:white;
+                border:none;
+                padding:12px 24px;
+                font-weight:bold;
+                cursor:pointer;
+            }
+
+            .back-button:hover{
+                background:#33691E;
+            }
+
+            .empty-card{
+                display:flex;
+                justify-content:center;
+                align-items:center;
+                height:250px;
+                box-shadow:none;
+                background:transparent;
+            }
+
+            .category-only{
+                width:80%;
+                padding:18px;
+                background:#6d8f3f;
+                color:white;
+                border:none;
+                border-radius:10px;
+                font-size:20px;
+                font-weight:bold;
+            }
+
+            .category-only:hover{
+                background:#33691E
             }
 
             .photo-card{
@@ -108,17 +175,13 @@
                 display:block;
             }
 
-            .photo-card h3{
+            .photo-card p{
                 text-align:center;
                 color:#33691E;
-                margin:18px 0 8px;
+                font-weight:bold;
+                margin:14px;
             }
-
-            .photo-card p{
-                padding:0 20px 20px;
-                line-height:1.8;
-            }
-
+        
             footer{
                 background:#33691E;
                 color:white;
@@ -127,19 +190,21 @@
                 margin-top:50px;
             }
 
+            footer a{
+                color:white;
+            }
+
             @media(max-width:900px){
                 .gallery{
                     grid-template-columns:repeat(2,1fr);
                 }
             }
 
+
+
             @media(max-width:600px){
                 .gallery{
                     grid-template-columns:1fr;
-                }
-        
-                header h1{
-                    font-size:30px;
                 }
             }
 
@@ -180,28 +245,16 @@
                 header h1{
                     font-size:30px;
                 }
-                
-                nav a{
-                    width:100%;
-                    text-align:center;
-                    border-bottom:1px solid
-                    rgba(255,255,255,0.2);
-                }
-
-                .hero{
-                    height:360px;
-                }
-
-                .message{
-                    margin:25px 15px;
-                }
-
-                .message h2{
-                    font-size:26px;
-                }
-            }
-
+            }    
+                                
         </style>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S2LG05GGPD"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}gtag('js',new Date());
+            gtag('config', 'G-S2LG05GGPD');
+        </script>
     </head>
 
     <body>
@@ -233,28 +286,17 @@
             
             <h2 class="page-title">農園の風景</h2>
 
-            <section class="gallery">
+            <div class="category-buttons" id="category-buttons"></div>
 
-                <div class="photo-card">
-                    <img src="images/grape.jpg" alt="ぶどう畑">
-                    <h3>ぶどう</h3>
-                    <p>信州の自然の中で育つぶどう。季節ごとの表情をお届けします。</p>
-                </div>
+            <section class="gallery" id="gallery"></section>
 
-            　　<div class="photo-card">
-                    <img src="images/shiitake.jpg" alt="原木しいたけ">
-                    <h3>しいたけ</h3>
-                    <p>森の中で育つ原木しいたけ。栽培や収穫の様子をご紹介します。</p>
-                </div>
-
-            </section>
         </main>
 
         <footer>
             <p>
                 <a href="https://lin.ee/XFZeWaB">LINE</a> |
                 <a href="https://youtube.com/channel/UCWCrfZPdQvZXiJXD6ffQQnA?si=4Xva8m6RVkRZvQrc">YouTube</a> |
-                <a href="https://ttfarm.theshop.jp">オンラインショップ</a>　｜
+                <a href="https://ttfarm.theshop.jp">オンラインショップ</a> ｜
                 <a href="contact.html">お問い合わせ</a>
             </p>
 
@@ -262,9 +304,109 @@
         </footer>
 
         <script>
+            const galleryApi = "https://script.google.com/macros/s/AKfycbwvcu3Qsq_C1kUCfCpQsJdoiQTBw9G9mDC0lKsmVlaOvEJM2cJh4e2XMq6zsWOOcV__/exec";
+
+            const categoryNames = {
+                grape:"ぶどう",
+                shiitake:"しいたけ",
+                rice:"米",
+                soybean:"大豆",
+                sunflower:"ひまわり",
+                chrysanthemum:"小菊",
+                sansai:"山菜",
+                peach:"もも",
+                wheat:"小麦",
+                products:"商品",
+                animals:"農園で出会った生き物",
+                machinery:"農機具",
+            };
+
+            let galleryData = {};
+
+            fetch(galleryApi)
+            .then(response => response.json())
+            .then(data => {
+                galleryData = data;
+                showCategoryTop()
+            })
+            .catch(error => {
+                document.getElementById("gallery").innerHTML = "<p>ギャラリーを読み込めませんでした。</p>";
+                console.error(error);
+            });
+
+            function showCategoryTop(){
+                const gallery = document.getElementById("gallery");
+                const title = document.querySelector(".page-title");
+                title.textContent = "ギャラリー";
+                gallery.innerHTML = "";
+                const sortedCategories = Object.keys(categoryNames).sort((a,b)=> {
+                    const aCount = (galleryData[a] || []).length;
+                    const bCount = (galleryData[b] || []).length;
+                    if(aCount === 0 && bCount>0){
+                        return 1;                        
+                    }
+                    if(aCount >0 && bCount === 0){
+                        return -1;
+                    }
+                    return 0;
+                });
+
+                sortedCategories.forEach(category =>{
+                    const photos = (galleryData[category] || []).slice().sort((a,b) => {
+                        return a.name.localeCompare(b.name,"ja");
+                    });
+
+                    if(photos.length === 0){
+                        gallery.innerHTML += `
+                            <div class="photo-card empty-card">
+                                <button class="category-only"
+                                onclick="showGallery('${category}')">
+                                    ${categoryNames[category]}
+                                </button>
+                            </div>
+                        `;
+                        return;
+                    }
+                    const mainPhoto = photos.find(photo => photo.isCover) || photos[0];
+                    gallery.innerHTML += `
+                        <div class="photo-card category-card" onclick="showGallery('${category}')">
+                            <img src="${mainPhoto.url}" alt="${categoryNames[category]}">
+                            <p>${categoryNames[category]}</p>
+                        </div>
+                    `;
+                });
+            }
+            
+            function showGallery(category){
+                const gallery = document.getElementById("gallery");
+                const title = document.querySelector(".page-title");
+                title.textContent = categoryNames[category];
+                gallery.innerHTML = `
+                    <div style="grid-column:1/-1;text-align:center;margin-bottom:10px;">
+                        <button class="back-button" onclick="showCategoryTop()">←　ギャラリー一覧へ戻る</button>
+                    </div>
+                `;
+            
+                const photos = (galleryData[category] || []).slice().sort((a,b) => {
+                    return a.name.localeCompare(b.name,"ja");
+                });
+                if(photos.length === 0){
+                    gallery.innerHTML += "<p>写真はまだありません。</p>";
+                    return;
+                }
+
+                photos.forEach(photo => {
+                    gallery.innerHTML += `
+                        <div class="photo-card">
+                            <img src="${photo.url}" alt="${photo.name}">
+                            <p>${photo.name}</p>
+                        </div>
+                    `;
+                });
+            }
+            
             function toggleMenu(){
-                const menu =
-                document.getElementById("nav-menu");
+                const menu = document.getElementById("nav-menu");
                 menu.classList.toggle("open");
             }
         </script>

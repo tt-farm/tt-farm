@@ -1,10 +1,9 @@
-<!DOCTIPE html>
+<!DOCTYPE html>
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport"
-        content="width=devece-width,
-        initial-scale=1.0>"
+        content="width=devece-width, initial-scale=1.0>"
         <title>T.Tファーム</title>
         
         <style>
@@ -33,7 +32,7 @@
             }
 
             .logo-ja{
-                font-falmilly:"Yu Gothic","Hiragino Sans",sans-serif;
+                font-family:"Yu Gothic","Hiragino Sans",sans-serif;
                 font-weight:bold;
             }
              
@@ -145,6 +144,7 @@
                 max-width:1200px;
                 margin:50px auto;
                 padding:0 20px;
+                align-items:stretch;
             }
 
             .card{
@@ -153,12 +153,15 @@
                 background:white;
                 border-radius:12px;
                 overflow:hidden;
-                box-shadow:0 4px 10px rgba(0,0,0,0.1)
+                box-shadow:0 4px 10px rgba(0,0,0,0.1);
+                display:flex;
+                flex-direction:column;
             }
 
             .card img{
                 width:100%;
-                height:auto;
+                height:250px;
+                object-fit:cover;
                 display:block;
             }
 
@@ -170,6 +173,7 @@
             .card p{
                 padding:0 20px 20px;
                 line-height:1.8;
+                flex:1;
             }
 
             @media(max-width:900px){
@@ -216,6 +220,13 @@
                 }
             }
         </style>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S2LG05GGPD"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}gtag('js',new Date());
+            gtag('config', 'G-S2LG05GGPD');
+        </script>
     </head>
 
     <body>
@@ -273,6 +284,33 @@
                 </p>
             </div>
 
+            <div class="card">
+                <img src="images/rice.jpg" alt="米">
+                <h3>米</h3>
+                <p>
+                    信州の自然の中で育つお米。
+                    田んぼの様子や季節ごとの作業をご紹介します。
+                </p>
+            </div>
+
+            <div class="card">
+                <img src="images/sansai.jpg" alt="山菜">
+                <h3>山菜</h3>
+                <p>
+                    里山で出会う季節の山菜。
+                    自然の恵みを大切にお届けします。
+                </p>
+            </div>
+
+            <div class="card">
+                <img src="images/wheat.jpg" alt="小麦">
+                <h3>小麦</h3>
+                <p>
+                    北アルプスを望む景色の中で育つ小麦。
+                    麦の成長や収穫の様子をご紹介します。
+                </p>
+            </div>
+
         </section>
         
         <section class="cards">
@@ -287,8 +325,8 @@
             </div>
 
             <div class="card">
-                <h3>クイズ・ゲーム</h3>
-                <p>農園や作物について、楽しく学べるコンテンツを準備中です。</p>
+                <h3>農園日記</h3>
+                <p>農園での出来事や作物の成長、季節ごとの様子を日々更新しています。</p>
             </div>
 
         </section>
@@ -297,7 +335,7 @@
             <p>
                 <a href="https://lin.ee/XFZeWaB">LINE</a> |
                 <a href="https://youtube.com/channel/UCWCrfZPdQvZXiJXD6ffQQnA?si=4Xva8m6RVkRZvQrc">YouTube</a> |
-                <a href="https://ttfarm.theshop.jp">オンラインショップ</a>　｜
+                <a href="https://ttfarm.theshop.jp">オンラインショップ</a> ｜
                 <a href="contact.html">お問い合わせ</a>
             </p>
 
