@@ -1,471 +1,489 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-        <title>T.Tファーム|農園日記</title>
-        
-        <style>
-            body{
-                margin:0;
-                font-family:"Yu Gothic","Hiragino Sans",sans-serif;
-                background:#fffaf0;
-                color:#333;
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T.Tファーム｜農園日記</title>
+
+<style>
+body{
+    margin:0;
+    font-family:"Yu Gothic","Hiragino Sans",sans-serif;
+    background:#fffaf0;
+    color:#333;
+}
+
+header{
+    background:#f6d77a;
+    color:#4e342e;
+    text-align:center;
+    padding:22px;
+}
+
+header h1{
+    margin:0;
+    font-size:42px;
+}
+
+.logo-tt{
+    font-family:'Great Vibes',cursive;
+    margin-right:10px;
+}
+
+.logo-ja{
+    font-family:"Yu Gothic","Hiragino Sans",sans-serif;
+    font-weight:bold;
+}
+
+header p{
+    margin:8px 0 0;
+    font-size:18px;
+}
+
+.menu-button{
+    display:none;
+    position:fixed;
+    top:30px;
+    left:15px;
+    z-index:1001;
+    background:#33691E;
+    color:white;
+    border:none;
+    font-size:28px;
+    padding:8px 14px;
+    cursor:pointer;
+    border-radius:6px;
+}
+
+nav{
+    background:#33691E;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:12px 20px;
+    font-weight:bold;
+    border-right:1px solid rgba(255,255,255,0.25);
+}
+
+nav a:hover{
+    background:#558B2F;
+}
+
+main{
+    max-width:1100px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.section{
+    background:white;
+    padding:30px;
+    margin-bottom:30px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.section h2{
+    color:#6d8f3f;
+}
+
+.diary-buttons,
+.month-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.diary-buttons button,
+.month-buttons button{
+    background:#6d8f3f;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.diary-buttons button:hover,
+.diary-buttons button.active,
+.month-buttons button:hover,
+.month-buttons button.active{
+    background:#33691E;
+}
+
+.diary-photos{
+    display:grid;
+    gap:15px;
+    margin-bottom:20px;
+    width:100%;
+}
+
+.one-photo{
+    grid-template-columns:1fr;
+}
+
+.two-photo{
+    grid-template-columns:1fr 1fr;
+}
+
+.three-photo,
+.many-photo{
+    grid-template-columns:1fr 1fr 1fr;
+}
+
+.four-photo{
+    grid-template-columns:1fr 1fr;
+}
+
+.diary-photo{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.one-photo .diary-photo{
+    height:450px;
+}
+
+.two-photo .diary-photo{
+    height:320px;
+}
+
+footer{
+    background:#6d8f3f;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+footer a{
+    color:white;
+}
+
+@media(max-width:768px){
+    header h1{
+        font-size:30px;
+    }
+
+    .menu-button{
+        display:block;
+    }
+
+    nav{
+        position:fixed;
+        top:0;
+        left:-260px;
+        width:240px;
+        height:100vh;
+        background:#33691E;
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        padding-top:70px;
+        transition:0.3s;
+        z-index:1000;
+    }
+
+    nav.open{
+        left:0;
+    }
+
+    nav a{
+        border-right:none;
+        border-bottom:1px solid rgba(255,255,255,0.25);
+        text-align:left;
+        padding:16px 20px;
+    }
+
+    .diary-photos{
+        grid-template-columns:1fr;
+    }
+
+    .diary-photo,
+    .one-photo .diary-photo,
+    .two-photo .diary-photo{
+        height:auto;
+    }
+}
+</style>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S2LG05GGPD"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-S2LG05GGPD');
+</script>
+
+</head>
+
+<body>
+
+<header>
+    <h1>
+        <span class="logo-tt">T.T</span>
+        <span class="logo-ja">ファーム</span>
+    </h1>
+    <p>農園日記</p>
+</header>
+
+<button class="menu-button" onclick="toggleMenu()">≡</button>
+
+<nav id="nav-menu">
+    <a href="index.html">ホーム</a>
+    <a href="about.html">農園紹介</a>
+    <a href="gallery.html">ギャラリー</a>
+    <a href="year.html">農家の一年</a>
+    <a href="diary.html">農園日記</a>
+    <a href="quiz.html">クイズ</a>
+    <a href="event.html">イベント</a>
+    <a href="https://ttfarm.theshop.jp" target="_blank">購入（外部サイト）</a>
+    <a href="contact.html">お問い合わせ</a>
+</nav>
+
+<main>
+    <div class="diary-buttons" id="diary-buttons"></div>
+    <div class="month-buttons" id="month-buttons"></div>
+    <div id="diary-container"></div>
+</main>
+
+<footer>
+    <p>
+        <a href="https://lin.ee/XFZeWaB">LINE</a> |
+        <a href="https://youtube.com/channel/UCWCrfZPdQvZXiJXD6ffQQnA?si=4Xva8m6RVkRZvQrc">YouTube</a> |
+        <a href="https://ttfarm.theshop.jp">オンラインショップ</a> |
+        <a href="contact.html">お問い合わせ</a>
+    </p>
+    <p>© T.Tファーム</p>
+</footer>
+
+<script>
+const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIJckT29tSM4bkVYposxeHJiS_Q8lyrN_UtEz-ErNcmwnSkTnyDy644fsz7MA6Brla-wiP6SogQA0E/pub?output=csv";
+
+const categories = [
+    "すべて",
+    "ぶどう",
+    "しいたけ",
+    "米",
+    "大豆",
+    "小菊",
+    "ひまわり",
+    "山菜",
+    "もも",
+    "小麦",
+    "商品",
+    "農園で出会った生き物",
+    "農機具"
+];
+
+const months = [
+    "すべて","1月","2月","3月","4月","5月","6月",
+    "7月","8月","9月","10月","11月","12月"
+];
+
+let diaryData = [];
+let selectedCategory = "すべて";
+let selectedMonth = "すべて";
+
+function convertDriveUrl(url){
+    if(!url) return "";
+
+    const match = url.match(/\/d\/([^/]+)/);
+
+    if(match){
+        const fileId = match[1];
+        return `https://lh3.googleusercontent.com/d/${fileId}`;
+    }
+
+    return url;
+}
+
+function parseCSV(csv){
+    const rows = [];
+    let row = [];
+    let cell = "";
+    let inQuotes = false;
+
+    for(let i = 0; i < csv.length; i++){
+        const char = csv[i];
+        const next = csv[i + 1];
+
+        if(char === '"' && inQuotes && next === '"'){
+            cell += '"';
+            i++;
+        }else if(char === '"'){
+            inQuotes = !inQuotes;
+        }else if(char === "," && !inQuotes){
+            row.push(cell);
+            cell = "";
+        }else if((char === "\n" || char === "\r") && !inQuotes){
+            if(cell !== "" || row.length > 0){
+                row.push(cell);
+                rows.push(row);
+                row = [];
+                cell = "";
             }
+        }else{
+            cell += char;
+        }
+    }
 
-            header{
-                background:#f6d77a;
-                color:#4e342e;
-                text-align:center;
-                padding:22px;
-            }
+    if(cell !== "" || row.length > 0){
+        row.push(cell);
+        rows.push(row);
+    }
 
-            header h1{
-                margin:0;
-                font-size:42px;
-            }
-            
-            .logo-tt{
-                font-family:'Great Vibes',cursive;
-                margin-right:10px;
-            }
+    return rows;
+}
 
-            .logo-ja{
-                font-family:"Yu Gothic","Hiragino Sans",sans-serif;
-                font-weight:bold;
-            }
+function getMonthFromDate(dateText){
+    const match = dateText.match(/(\d{1,2})[\/月](\d{1,2})|(\d{4})[\/\-](\d{1,2})[\/\-](\d{1,2})/);
 
-            header p{
-                margin:8px 0 0;
-                font-size:18px;
-            }
+    const date = new Date(dateText);
 
-            .menu-button{
-                display:none;
-                position:fixed;
-                top:30px;
-                left:15px;
-                z-index:1001;
-                background:#33691E;
-                color:white;
-                border:none;
-                font-size:28px;
-                padding:8px 14px;
-                cursor:pointer;
-                border-radius:6px;
-            }
+    if(!isNaN(date)){
+        return date.getMonth() + 1;
+    }
 
-            nav{
-                background:#33691E;
-                display:flex;
-                justify-content:center;
-                flex-wrap:wrap;
-            }
+    return null;
+}
 
-            nav a{
-                color:white;
-                text-decoration:none;
-                padding:12px 20px;
-                font-weight:bold;
-                border-right:1px solid
-                rgba(255,255,255,0.25);
-            }
-            nav a:hover{
-                background:#558B2F;
-            }
+function createButtons(){
+    const categoryArea = document.getElementById("diary-buttons");
+    const monthArea = document.getElementById("month-buttons");
 
-            @media(max-width:768px){
+    categoryArea.innerHTML = "";
+    monthArea.innerHTML = "";
 
-                .menu-button{
-                    display:block;
-                }
+    categories.forEach(category => {
+        const button = document.createElement("button");
+        button.textContent = category;
+        button.onclick = () => {
+            selectedCategory = category;
+            showDiary();
+        };
+        categoryArea.appendChild(button);
+    });
 
-                nav{
-                    position:fixed;
-                    top:0;
-                    left:-260px;
-                    width:240px;
-                    height:100vh;
-                    background:#33691E;
-                    display:flex;
-                    flex-direction:column;
-                    justify-content:flex-start;
-                    padding-top:70px;
-                    transition:0.3s;
-                    z-index:1000;
-                }
-               
-                nav.open{
-                    left:0;
-                }
+    months.forEach(month => {
+        const button = document.createElement("button");
+        button.textContent = month;
+        button.onclick = () => {
+            selectedMonth = month;
+            showDiary();
+        };
+        monthArea.appendChild(button);
+    });
+}
 
-                nav a{
-                    border-right:none;
-                    border-bottom:1px solid rgba(255,255,255,0.25);
-                    text-align:left;
-                    padding:16px 20px;
-                }
-            }
-            main{
-                max-width:1100px;
-                margin:40px auto;
-                padding:20px;
-            }
-        
-            h2{
-                color:#6d8f3f;
-            }
-        
-            .section{
-                background:white;
-                padding:30px;
-                margin-bottom:30px;
-                border-radius:12px;
-                box-shadow:0 4px 10px rgba(0,0,0,0.1);
-            }
+function updateActiveButtons(){
+    document.querySelectorAll(".diary-buttons button").forEach(button => {
+        button.classList.toggle("active", button.textContent === selectedCategory);
+    });
 
-            .section h2{
-                color:#6d8f3f;
-            }
+    document.querySelectorAll(".month-buttons button").forEach(button => {
+        button.classList.toggle("active", button.textContent === selectedMonth);
+    });
+}
 
-            .section ul{
-                line-height:2;
-            }
+function getPhotoClass(count){
+    if(count === 1) return "one-photo";
+    if(count === 2) return "two-photo";
+    if(count === 3) return "three-photo";
+    if(count === 4) return "four-photo";
+    if(count >= 5) return "many-photo";
+    return "";
+}
 
-            .diary-photo{
-                width:100%;
-                height:220px;
-                object-fit:cover;
-                border-radius:12px;
-            }
+function showDiary(){
+    const container = document.getElementById("diary-container");
+    container.innerHTML = "";
 
-            .diary-photos{
-                display:grid;
-                gap:15px;
-                margin-bottom:20px;
-                width:100%;
-            }
+    updateActiveButtons();
 
-            .four-photo{
-                grid-template-columns:1fr 1fr;
-            }
+    const filteredData = diaryData.filter(item => {
+        const categoryOK =
+            selectedCategory === "すべて" ||
+            item.category === selectedCategory;
 
-            .two-photo{
-                grid-template-columns:1fr 1fr;
-            }
+        const itemMonth = getMonthFromDate(item.date);
 
-            .many-photo{
-                grid-template-columns:1fr 1fr 1fr;
-            }
+        const monthOK =
+            selectedMonth === "すべて" ||
+            itemMonth === Number(selectedMonth.replace("月",""));
 
-            .three-photo{
-                grid-template-columns:1fr 1fr 1fr;
-            }
+        return categoryOK && monthOK;
+    });
 
-            .one-photo .diary-photo{
-                height:450px;
-            }
+    if(filteredData.length === 0){
+        container.innerHTML = "<p>日記はまだありません。</p>";
+        return;
+    }
 
-            .two-photo .diary-photo{
-                height:320px;
-            }
+    filteredData.forEach(item => {
+        const images = item.imageText
+            .split(";")
+            .map(url => convertDriveUrl(url.trim()))
+            .filter(url => url !== "");
 
-            .three-photo .diary-photo,
-            .four-photo .diary-photo,
-            .many-photo .diary-photo{
-                height:250px;
-            }
+        const photoClass = getPhotoClass(images.length);
 
-            .diary-photo{
-                width:100%;
-                height:220px;
-                object-fit:cover;
-                border-radius:12px;
-            }
+        const imageHtml = images.map(image => `
+            <img src="${image}" alt="${item.title}" class="diary-photo">
+        `).join("");
 
-            .diary-buttons,
-            .month-buttons{            
-                display:flex;
-                justify-content:center;
-                flex-wrap:wrap;
-                gap:10px;
-                margin-bottom:25px;            
-            }
+        container.innerHTML += `
+            <section class="section">
+                <div class="diary-photos ${photoClass}">
+                    ${imageHtml}
+                </div>
 
-            .diary-buttons button,
-            .month-buttons button{
-                background:#6d8f3f;
-                color:white;
-                border:none;
-                padding:10px 18px;
-                font-weight:bold;
-                cursor:pointer;
-            }
+                <p><strong>${item.date}</strong></p>
+                <p>${item.category}</p>
+                <h2>${item.title}</h2>
+                <p>${item.text}</p>
+            </section>
+        `;
+    });
+}
 
-            .diary-buttons button:hover,
-            .diary-buttons button.active,
-            .month-buttons button:hover,
-            .month-buttons button.active{
-                background:#33691E;
-            }
+fetch(sheetUrl)
+.then(response => response.text())
+.then(csv => {
+    const rows = parseCSV(csv).slice(1);
 
-            @media(max-width:768px){
-                .diary-photos{
-                    grid-template-columns:1fr;
-                }
-                .diary-photo{
-                    height:auto;
-                }
-            }
+    diaryData = rows.map(columns => {
+        return {
+            date: columns[0] || "",
+            category: columns[1] || "",
+            title: columns[2] || "",
+            text: columns[3] || "",
+            imageText: columns[4] || ""
+        };
+    }).filter(item => item.title !== "").reverse();
 
-            footer{
-                background:#6d8f3f;
-                color:white;
-                text-align:center;
-                padding:20px;
-            }
+    createButtons();
+    showDiary();
+})
+.catch(error => {
+    document.getElementById("diary-container").innerHTML =
+        "<p>農園日記を読み込めませんでした。</p>";
+    console.error(error);
+});
 
-            @media(max-width:768px){
-                header h1{
-                    font-size:30px;
-                }
-                
-                nav a{
-                    width:100%;
-                    text-align:center;
-                    border-bottom:1px solid
-                    rgba(255,255,255,0.2);
-                }
+function toggleMenu(){
+    const menu = document.getElementById("nav-menu");
+    menu.classList.toggle("open");
+}
+</script>
 
-                .hero{
-                    height:360px;
-                }
-
-                .message{
-                    margin:25px 15px;
-                }
-
-                .message h2{
-                    font-size:26px;
-                }
-            }
-
-        </style>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-S2LG05GGPD"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}gtag('js',new Date());
-            gtag('config', 'G-S2LG05GGPD');
-        </script>
-    </head>
-   
-    <body>
-
-    　　<header>
-            <h1>
-                <span class="logo-tt">T.T</span>
-                <span class="logo-ja">ファーム</span>
-            </h1>
-            <p>農園日記</p>
-        </header>
-
-        <button class="menu-button"
-        onclick="toggleMenu()">≡</button>
-
-        <nav id="nav-menu">
-            <a href="index.html">ホーム</a>
-            <a href="about.html">農園紹介</a>
-            <a href="gallery.html">ギャラリー</a>
-            <a href="year.html">農家の一年</a>
-            <a href="diary.html">農園日記</a>
-            <a href="quiz.html">クイズ</a>
-            <a href="event.html">イベント</a>
-            <a href="https://ttfarm.theshop.jp" target="_blank">購入（外部サイト）</a>
-            <a href="contact.html">お問い合わせ</a>
-        </nav>
-
-        <main>
-            <div class="diary-buttons" id="diary-buttons"></div>
-            <div class="month-buttons" id="month-buttons"></div>
-            <div id="diary-container"></div>
-        </main>
-
-        <script>
-            const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIJckT29tSM4bkVYposxeHJiS_Q8lyrN_UtEz-ErNcmwnSkTnyDy644fsz7MA6Brla-wiP6SogQA0E/pub?output=csv";
-
-            function convertDriveUrl(url){
-                if(!url) return "";
-
-                const match = url.match(/\/d\/([^/]+)/);
-                
-                if(match){
-                    const fileId = match[1];
-                    return`https://lh3.googleusercontent.com/d/${fileId}`;
-                }
-                return url;
-            }
-
-            const categoryNames = {
-                all:"すべて",
-                grape:"ぶどう",
-                shiitake:"しいたけ",
-                rice:"米",
-                soybean:"大豆",
-                chrysanthemum:"小菊",
-                sunflower:"ひまわり",
-                sansai:"山菜",
-                peach:"もも",
-                wheat:"小麦",    
-            };
-
-            function createMonthButtons(){
-                const area = document.getElementById("month-buttons");
-                area.innerHTML = "";
-                const months = [
-                    "すべて","1月","2月","3月","4月","5月","6月"
-                    ,"7月","8月","9月","10月","11月","12月"
-                ];
-                months.forEach(month=>{
-                    const button = document.createElement("button");
-                    button.textContent = month;
-                    button.id="month-btn-" + month;
-                    button.onclick = () => {
-                        selectedMonth = month;
-                        showDiary();
-                    };
-                    area.appendChild(button);
-                });
-            }
-
-            let diaryData = [];
-            let selectedCategory = "すべて";
-            let selectedMonth = "すべて";
-
-            fetch(sheetUrl)
-            .then(response => response.text())
-            .then(csv => {
-                const rows = parseCSV(csv).slice(1);
-
-                diaryData = rows.map(columns => {
-                    return {
-                        date: columns[0],
-                        category: columns[1],
-                        title: columns[2],
-                        text: columns[3],
-                        imageText: columns[4] || ""
-                    };
-                }).reverse();
-
-                createDiaryButtons();
-                createMonthButtons();
-                showDiary();
-            })
-            .catch(error => {
-                document.getElementById("diary-container").innerHTML =
-                "<p>農園日記を読み込めませんでした。</p>";
-                console.error(error);
-            });
-
-            function createDiaryButtons(){
-                const buttonArea = 
-                document.getElementById("diary-buttons");
-                buttonArea.innerHTML="";
-
-                Object.keys(categoryNames).forEach(category => {
-                    const button = document.createElement("button");
-                    button.textContent = categoryNames[category];
-                    button.id = "diary-btn-" + category;
-                    button.onclick = () => {
-                        selectedCategory =category;
-                        showDiary();
-                    };
-                    buttonArea.appendChild(button);
-                });
-            }
-
-            function showDiary(){
-                const container = document.getElementById("diary-container");
-                container.innerHTML = "";
-
-                document.querySelectorAll(".diary-buttons button")
-                .forEach(button => button.classList.remove("active"));
-
-                document.querySelectorAll(".month-buttons button")
-                .forEach(button => button.classList.remove("active"));
-
-                const activeCategoryButton = document.getElementById("diary-btn-" + selectedCategory);
-                const activeMonthButton = document.getElementById("month-btn-" + selectedMonth);
-
-                if(activeCategoryButton){
-                    activeCategoryButton.classList.add("active");
-                }
-
-                if(activeMonthButton){
-                    activeMonthButton.classList.add("active");
-                }
-                
-                const filteredData = diaryData.filter(item => {
-                    const categoryOK = selectedCategory === "すべて" ||
-                    item.category === categoryNames[selectedCategory];
-                    const date = new Date(item.date);
-                    const month = date.getMonth() + 1;
-                    const monthOK = 
-                        selectedMonth === "すべて" ||
-                        month === Number(selectedMonth.replace("月",""));
-                    return categoryOK && monthOK;
-                });    
-
-                if(filteredData.length === 0){
-                    container.innerHTML = "<p>日記はまだありません。</p>";
-                    return;
-                }
-
-                filteredData.forEach(item => {
-                    const images = item.imageText
-                        .split(";")
-                        .map(url => convertDriveUrl(url.trim()))
-                        .filter(url => url !== "");
-
-                    const imageHtml = images.map(image => `
-                        <img src="${image}" alt="${item.title}" class="diary-photo">
-                    `).join("");
-
-                    container.innerHTML += `
-                        <section class="section">
-                            <div class="diary-photos">
-                              ${imageHtml}
-                            </div>
-
-                            <p><strong>${item.date}</strong></p>
-                            <p>${item.category}</p>
-                            <h2>${item.title}</h2>
-                            <p>${item.text}</p>
-                        </section>
-                    `;
-                });
-            }
-        </script>
-
-    　　<footer>
-            <p>
-                <a href="https://lin.ee/XFZeWaB">LINE</a> |
-                <a href="https://youtube.com/channel/UCWCrfZPdQvZXiJXD6ffQQnA?si=4Xva8m6RVkRZvQrc">YouTube</a> |
-                <a href="https://ttfarm.theshop.jp">オンラインショップ</a> ｜
-                <a href="contact.html">お問い合わせ</a>
-            </p>
-
-            <p>© T.Tファーム</p>
-        </footer>
-
-        <script>
-            function toggleMenu(){
-                const menu =
-                document.getElementById("nav-menu");
-                menu.classList.toggle("open");
-            }
-        </script>
-
-    </body>
+</body>
 </html>
