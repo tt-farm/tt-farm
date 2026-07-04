@@ -176,6 +176,15 @@
                 flex:1;
             }
 
+            .link-card{
+                cursor:pointer;
+            }
+
+            .link-card:hover{
+                transform:translateY(-4px);
+                transition:0.3s;
+            }
+
             @media(max-width:900px){
                 .cards{
                     grid-template-columns:repeat(2,1fr);
@@ -267,7 +276,7 @@
 
         <section class="cards">
 
-            <div class="card">
+            <div class="card link-card" onclick="location.href='gallery.html?category=grape'">
                 <img src="images/grape.jpg" alt="ぶどう">
                 <h3>ぶどう</h3>
                 <p>
@@ -276,7 +285,7 @@
                 </p>
             </div>
 
-            <div class="card">
+            <div class="card link-card" onclick="location.href='gallery.html?category=shiitake'">
                 <img src="images/shiitake.jpg" alt="しいたけ">
                 <h3>しいたけ</h3>
                 <p>
@@ -284,7 +293,7 @@
                 </p>
             </div>
 
-            <div class="card">
+            <div class="card link-card" onclick="location.href='gallery.html?category=rice'">
                 <img src="images/rice.jpg" alt="米">
                 <h3>米</h3>
                 <p>
@@ -293,7 +302,7 @@
                 </p>
             </div>
 
-            <div class="card">
+            <div class="card link-card" onclick="location.href='gallery.html?category=sansai'">
                 <img src="images/sansai.jpg" alt="山菜">
                 <h3>山菜</h3>
                 <p>
@@ -302,7 +311,7 @@
                 </p>
             </div>
 
-            <div class="card">
+            <div class="card link-card" onclick="location.href='gallery.html?category=wheat'">
                 <img src="images/wheat.jpg" alt="小麦">
                 <h3>小麦</h3>
                 <p>
@@ -314,17 +323,17 @@
         </section>
         
         <section class="cards">
-            <div class="card">
+            <div class="card link-card" onclick="location.href='about.html'">
                 <h3>農園紹介</h3>
                 <p>信州の自然の中で育つ作物や、私たちの思いを紹介します。</p>
             </div>
 
-            <div class="card">
+            <div class="card link-card" onclick="location.href='gallery.html'"">
                 <h3>ギャラリー</h3>
                 <p>畑の風景や作物の成長、季節ごとの写真をお届けします。</p>
             </div>
 
-            <div class="card">
+            <div class="card link-card" onclick="location.href='diary.html'"">
                 <h3>農園日記</h3>
                 <p>農園での出来事や作物の成長、季節ごとの様子を日々更新しています。</p>
             </div>

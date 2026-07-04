@@ -159,6 +159,15 @@
                 padding:15px;
             }
 
+            .link-card{
+                cursor:pointer;
+            }
+
+            .link-card:hover{
+                transform:translateY(-4px);
+                transition:0.3s;
+            }
+
             @media(max-width:900px){
                 .crop-cards{
                     grid-template-columns:repeat(2,1fr);
@@ -249,28 +258,28 @@
             <h2>栽培している作物</h2>
 
             <div class="crop-cards">
-                <div class="crop-card">
+                <div class="crop-card link-card" onclick="location.href='gallery.html?category=grape'">
                     <img src="images/grape.jpg" alt="ぶどう">
                     <h3>ぶどう</h3>    
                 </div>
 
-                <div class="crop-card">
+                <div class="crop-card link-card" onclick="location.href='gallery.html?category=shiitake'">
                     <img src="images/shiitake.jpg" alt="しいたけ">
                     <h3>しいたけ</h3>    
                 </div>
 
-                <div class="crop-card">
-                    <img src="images/rice.jpg" alt="ぶどう">
+                <div class="crop-card link-card" onclick="location.href='gallery.html?category=rice'">
+                    <img src="images/rice.jpg" alt="お米">
                     <h3>お米</h3>    
                 </div>
                 
-                <div class="crop-card">
-                    <img src="images/sansai.jpg" alt="ぶどう">
+                <div class="crop-card link-card" onclick="location.href='gallery.html?category=sansai'">
+                    <img src="images/sansai.jpg" alt="山菜">
                     <h3>山菜</h3>    
                 </div>
 
-                <div class="crop-card">
-                    <img src="images/wheat.jpg" alt="ぶどう">
+                <div class="crop-card link-card" onclick="location.href='gallery.html?category=wheat'">
+                    <img src="images/wheat.jpg" alt="小麦">
                     <h3>小麦</h3>    
                 </div>                
             </div>

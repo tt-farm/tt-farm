@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport"
-        content="width=devece-width, initial-scale=1.0>"
+        content="width=device-width, initial-scale=1.0>"
         <title>T.Tファーム|ギャラリー</title>
         
         <style>
@@ -134,6 +134,20 @@
             }
 
             .back-button:hover{
+                background:#33691E;
+            }
+
+            .diary-link{
+                display:inline-block;
+                background:#6d8f3f;
+                color:white;
+                text-decoration:none;
+                padding:12px 24px;
+                border-radius:8px;
+                font-weight:bold;
+            }
+
+            .diary-link:hover{
                 background:#33691E;
             }
 
@@ -304,6 +318,9 @@
         </footer>
 
         <script>
+
+            const diaryCsvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIJckT29tSM4bkVYposxeHJiS_Q8lyrN_UtEz-ErNcmwnSkTnyDy644fsz7MA6Brla-wiP6SogQA0E/pub?output=csv";
+            let diaryCategories = [];
             const galleryApi = "https://script.google.com/macros/s/AKfycbwvcu3Qsq_C1kUCfCpQsJdoiQTBw9G9mDC0lKsmVlaOvEJM2cJh4e2XMq6zsWOOcV__/exec";
 
             const categoryNames = {
@@ -321,89 +338,120 @@
                 machinery:"農機具",
             };
 
-            let galleryData = {};
+            const params = new URLSearchParams(window.location.search);
+            const initialCategory = params.get("category");
 
-            fetch(galleryApi)
-            .then(response => response.json())
-            .then(data => {
-                galleryData = data;
-                showCategoryTop()
+            let coverData = {};
+
+            Promise.all([
+                fetch(galleryApi).then(response => response.json()),
+                fetch(diaryCsvUrl).then(response => response.text())
+            ])
+            
+            .then(([gallery, csv]) => {
+                converData = gallery;
+                diaryCategories = csv
+                    .trim()
+                    .split("\n")
+                    .slice(1)
+                    .map(row => row.split(",")[1])
+                    .filter(category => category);
+            
+                if(initialCategory && categoryNames[initialCategory]){
+                    showGallery(initialCategory);
+                }else{
+                showCategoryTop();
+                }
             })
             .catch(error => {
-                document.getElementById("gallery").innerHTML = "<p>ギャラリーを読み込めませんでした。</p>";
-                console.error(error);
-            });
+                document.getElementById("gallery").innerHTML =
+                    "<p>ギャラリーを読み込めませんでした。</p>"
+                    console.error(error);
+            });                     
 
             function showCategoryTop(){
                 const gallery = document.getElementById("gallery");
                 const title = document.querySelector(".page-title");
                 title.textContent = "ギャラリー";
                 gallery.innerHTML = "";
-                const sortedCategories = Object.keys(categoryNames).sort((a,b)=> {
-                    const aCount = (galleryData[a] || []).length;
-                    const bCount = (galleryData[b] || []).length;
-                    if(aCount === 0 && bCount>0){
-                        return 1;                        
-                    }
-                    if(aCount >0 && bCount === 0){
-                        return -1;
-                    }
-                    return 0;
-                });
-
-                sortedCategories.forEach(category =>{
-                    const photos = (galleryData[category] || []).slice().sort((a,b) => {
-                        return a.name.localeCompare(b.name,"ja");
-                    });
-
-                    if(photos.length === 0){
+                
+                Object.keys(categoryNames).forEach(category => {
+                    const cover = coverData[category];
+                    if(!cover){
                         gallery.innerHTML += `
                             <div class="photo-card empty-card">
-                                <button class="category-only"
-                                onclick="showGallery('${category}')">
+                                <button class="category-only" onclick="showGallery('${category}')">
                                     ${categoryNames[category]}
                                 </button>
-                            </div>
-                        `;
-                        return;
+                            `;
+                            return;
                     }
-                    const mainPhoto = photos.find(photo => photo.isCover) || photos[0];
+
                     gallery.innerHTML += `
                         <div class="photo-card category-card" onclick="showGallery('${category}')">
-                            <img src="${mainPhoto.url}" alt="${categoryNames[category]}">
+                            <img src="${cover.url}" alt="${categoryNames[category]}">
                             <p>${categoryNames[category]}</p>
                         </div>
                     `;
                 });
             }
-            
+
             function showGallery(category){
                 const gallery = document.getElementById("gallery");
                 const title = document.querySelector(".page-title");
                 title.textContent = categoryNames[category];
-                gallery.innerHTML = `
-                    <div style="grid-column:1/-1;text-align:center;margin-bottom:10px;">
-                        <button class="back-button" onclick="showCategoryTop()">←　ギャラリー一覧へ戻る</button>
+                const hasDiary = diaryCategories.includes(categoryNames[category]);
+                gallery.innerHTML = `                  
+                    <div style="grid-column:1/-1;text-align:center;margin-bottom:20px;">
+                        <button class="back-button" onclick="showCategoryTop()">←　ギャラリー 一覧へ戻る</button>
+                        ${
+                            hasDiary
+                            ? `
+                            <br><br>
+                            <a class="diary-link"href="diary.html?category=${encodeURIComponent(categoryNames[category])}">
+                                📖 この作物の農園日記を見る
+                            </a>
+                            `
+                            : ""
+                        }
+                        
                     </div>
-                `;
-            
-                const photos = (galleryData[category] || []).slice().sort((a,b) => {
-                    return a.name.localeCompare(b.name,"ja");
-                });
-                if(photos.length === 0){
-                    gallery.innerHTML += "<p>写真はまだありません。</p>";
-                    return;
-                }
 
-                photos.forEach(photo => {
-                    gallery.innerHTML += `
-                        <div class="photo-card">
-                            <img src="${photo.url}" alt="${photo.name}">
-                            <p>${photo.name}</p>
-                        </div>
-                    `;
+                    <p style ="grid-column:1/-1;text-align:center;">
+                        読み込み中…
+                    </p>
+                `;
+                
+                fetch(`${galleryApi}?mode = category&category=${category}`)
+                    .then(response => response.json())
+                    .then(photos => {               
+                
+                        gallery.innerHTML = `                  
+                            <div style="grid-column:1/-1;text-align:center;margin-bottom:20px;">
+                                <button class="back-button" onclick="showCategoryTop()">←　ギャラリー 一覧へ戻る</button>
+                                ${
+                                    hasDiary
+                                    ? `
+                                        <br><br>
+                                        <a class="diary-link"href="diary.html?category=${encodeURIComponent(categoryNames[category])}">
+                                            📖 この作物の農園日記を見る
+                                        </a>
+                                    `
+                                    : ""
+                                }
+                            </div>
+                        `;                
+
+                    photos.forEach(photo => {
+                        gallery.innerHTML += `
+                            <div class="photo-card">
+                                <img src="${photo.url}" alt="${photo.name}">
+                                <p>${photo.name}</p>
+                            </div>
+                        `;
+                    });
                 });
-            }
+            }             
             
             function toggleMenu(){
                 const menu = document.getElementById("nav-menu");
