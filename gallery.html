@@ -349,7 +349,7 @@
             ])
             
             .then(([gallery, csv]) => {
-                converData = gallery;
+                coverData = gallery;
                 diaryCategories = csv
                     .trim()
                     .split("\n")
@@ -365,7 +365,7 @@
             })
             .catch(error => {
                 document.getElementById("gallery").innerHTML =
-                    "<p>ギャラリーを読み込めませんでした。</p>"
+                    "<p>ギャラリーを読み込めませんでした。</p>";
                     console.error(error);
             });                     
 
@@ -422,7 +422,7 @@
                     </p>
                 `;
                 
-                fetch(`${galleryApi}?mode = category&category=${category}`)
+                fetch(`${galleryApi}?mode=category&category=${category}`)
                     .then(response => response.json())
                     .then(photos => {               
                 
