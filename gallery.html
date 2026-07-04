@@ -436,7 +436,13 @@
                 
                 fetch(`${galleryApi}?mode=category&category=${category}`)
                     .then(response => response.json())
-                    .then(photos => {               
+                    .then(photos => {    
+                        
+                        photos.sort((a,b) => {
+                            if (a.isCover && !b.isCove) return -1;
+                            if (!a.isCover && b.isCove) return 1;
+                            return a.name.localeCompare(b.name,"ja");
+                        });
                 
                         gallery.innerHTML = `                  
                             <div style="grid-column:1/-1;text-align:center;margin-bottom:20px;">
