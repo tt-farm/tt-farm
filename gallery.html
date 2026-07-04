@@ -375,7 +375,18 @@
                 title.textContent = "ギャラリー";
                 gallery.innerHTML = "";
                 
-                Object.keys(categoryNames).forEach(category => {
+                const sortedCategories=
+                Object.keys(categoryNames).sort((a,b) => {
+                    const aHas = coverData[a] !== null && coverData[a] !== undefined;
+                    const bHas = coverData[b] !== null && coverData[b] !== undefined;
+
+                    if(aHas && !bHas) return -1;
+                    if(!aHas && bHas) return 1;
+
+                    return 0;
+                });
+
+                sortedCategories.forEach(category => {
                     const cover = coverData[category];
                     if(!cover){
                         gallery.innerHTML += `
@@ -383,8 +394,9 @@
                                 <button class="category-only" onclick="showGallery('${category}')">
                                     ${categoryNames[category]}
                                 </button>
-                            `;
-                            return;
+                            </div>
+                        `;
+                        return;
                     }
 
                     gallery.innerHTML += `
@@ -408,7 +420,7 @@
                             hasDiary
                             ? `
                             <br><br>
-                            <a class="diary-link"href="diary.html?category=${encodeURIComponent(categoryNames[category])}">
+                            <a class="diary-link" href="diary.html?category=${encodeURIComponent(categoryNames[category])}">
                                 📖 この作物の農園日記を見る
                             </a>
                             `
@@ -433,7 +445,7 @@
                                     hasDiary
                                     ? `
                                         <br><br>
-                                        <a class="diary-link"href="diary.html?category=${encodeURIComponent(categoryNames[category])}">
+                                        <a class="diary-link" href="diary.html?category=${encodeURIComponent(categoryNames[category])}">
                                             📖 この作物の農園日記を見る
                                         </a>
                                     `
