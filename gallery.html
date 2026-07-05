@@ -383,6 +383,20 @@
             <p>© T.Tファーム</p>
         </footer>
 
+        <div id="lightbox" class="lightbox">
+
+            <span class="lightbox-close" onclick="closeLightbox()">×</span>
+
+            <span class="lightbox-prev" onclick="prevPhoto()">❮</span>
+
+            <img id="lightbox-img">
+
+            <span class="lightbox-next" onclick="nextPhoto()">❯</span>
+
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+
+        </div>
+
         <script>
 
             const diaryCsvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRIJckT29tSM4bkVYposxeHJiS_Q8lyrN_UtEz-ErNcmwnSkTnyDy644fsz7MA6Brla-wiP6SogQA0E/pub?output=csv";
@@ -505,8 +519,8 @@
                     .then(photos => {    
                         
                         photos.sort((a,b) => {
-                            if (a.isCover && !b.isCove) return -1;
-                            if (!a.isCover && b.isCove) return 1;
+                            if (a.isCover && !b.isCover) return -1;
+                            if (!a.isCover && b.isCover) return 1;
                             return a.name.localeCompare(b.name,"ja");
                         });
                 
@@ -637,20 +651,6 @@
             }
 
         </script>
-
-        <div id="lightbox" class="lightbox">
-
-            <span class="lightbox-close" onclick="closeLightbox()">×</span>
-
-            <span class="lightbox-prev" onclick="prevPhoto()">❮</span>
-
-            <img id="lightbox-img">
-
-            <span class="lightbox-next" onclick="nextPhoto()">❯</span>
-
-            <div class="lightbox-caption" id="lightbox-caption"></div>
-
-        </div>
 
     </body>
 </html>
