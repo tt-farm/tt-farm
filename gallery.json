@@ -1,0 +1,282 @@
+{
+  "covers": {
+    "animals": {
+      "name": "???",
+      "originalName": "cover_???.jpg",
+      "isCover": true,
+      "url": "https://lh3.googleusercontent.com/d/1-ryGOmDGZVXb5SIgOFVrlEYVvYqlu_4A"
+    },
+    "chrysanthemum": null,
+    "grape": {
+      "name": "???????",
+      "originalName": "cover_???????.jpg",
+      "isCover": true,
+      "url": "https://lh3.googleusercontent.com/d/1AFZc7ZmSYmMi_g8TU3kw7FzW5q83EM-m"
+    },
+    "machinery": {
+      "name": "?????",
+      "originalName": "cover_?????.jpg",
+      "isCover": true,
+      "url": "https://lh3.googleusercontent.com/d/1rsOgJB0lKmpRo2ttZv54gu0U-upSDy6c"
+    },
+    "peach": null,
+    "products": {
+      "name": "????",
+      "originalName": "cover_????.jpg",
+      "isCover": true,
+      "url": "https://lh3.googleusercontent.com/d/1mGWb7nj-WvWFole-ZvLdrPA4BqkZ0Umn"
+    },
+    "rice": {
+      "name": "???????",
+      "originalName": "cover_???????.jpg",
+      "isCover": true,
+      "url": "https://lh3.googleusercontent.com/d/1fmSlN543E6YSToVXbNl8VWjbx7_RbB77"
+    },
+    "sansai": {
+      "name": "?????",
+      "originalName": "cover_?????.jpg",
+      "isCover": true,
+      "url": "https://lh3.googleusercontent.com/d/1oX4s_-xUo22XDsefxNZNHTXylqdN3vCl"
+    },
+    "shiitake": {
+      "name": "???????",
+      "originalName": "cover_???????.jpg",
+      "isCover": true,
+      "url": "https://lh3.googleusercontent.com/d/1qiD8FxH7D_wcSv9W0-cJo_4cTtssjGd4"
+    },
+    "soybean": null,
+    "sunflower": null,
+    "wheat": {
+      "name": "????",
+      "originalName": "cover_????.heif",
+      "isCover": true,
+      "url": "https://lh3.googleusercontent.com/d/1fyL66frPrCtigFaRkXY1qtDIj0_wOlce"
+    }
+  },
+  "categories": {
+    "animals": [
+      {
+        "name": "???????",
+        "originalName": "???????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1S7P_f9-zpQBDCthN7I_iBWTRTse8kmkZ"
+      },
+      {
+        "name": "???",
+        "originalName": "cover_???.jpg",
+        "isCover": true,
+        "url": "https://lh3.googleusercontent.com/d/1-ryGOmDGZVXb5SIgOFVrlEYVvYqlu_4A"
+      },
+      {
+        "name": "????",
+        "originalName": "????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1o7xOPj0ij5GYJaz1bwjkacW791LAQs1J"
+      },
+      {
+        "name": "????",
+        "originalName": "????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1z2QdvGz4TE32uvI-LGwuR3IhelSX-DUv"
+      }
+    ],
+    "chrysanthemum": [],
+    "grape": [
+      {
+        "name": "???????",
+        "originalName": "???????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1W_lLJtW7KrulV05zii7q_qLSJUSWAaC_"
+      },
+      {
+        "name": "???????????",
+        "originalName": "???????????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1tU0r2wbobbezk4PDcnrRo9iIO17Oi0Ds"
+      },
+      {
+        "name": "???????",
+        "originalName": "cover_???????.jpg",
+        "isCover": true,
+        "url": "https://lh3.googleusercontent.com/d/1AFZc7ZmSYmMi_g8TU3kw7FzW5q83EM-m"
+      }
+    ],
+    "machinery": [
+      {
+        "name": "?????",
+        "originalName": "cover_?????.jpg",
+        "isCover": true,
+        "url": "https://lh3.googleusercontent.com/d/1rsOgJB0lKmpRo2ttZv54gu0U-upSDy6c"
+      }
+    ],
+    "peach": [],
+    "products": [
+      {
+        "name": "????",
+        "originalName": "cover_????.jpg",
+        "isCover": true,
+        "url": "https://lh3.googleusercontent.com/d/1mGWb7nj-WvWFole-ZvLdrPA4BqkZ0Umn"
+      },
+      {
+        "name": "?????",
+        "originalName": "?????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1ZNN_icvAV5drZ16iF2VnTMzmYaRNPgsA"
+      },
+      {
+        "name": "????????",
+        "originalName": "????????.heif",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1w5_Zb7WGlGlD7hI_btxMWw-en2bbkOtD"
+      },
+      {
+        "name": "??",
+        "originalName": "??.HEIC",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1cOInLwck46KA4Fbis0zXNePYryJRPuuw"
+      },
+      {
+        "name": "?????",
+        "originalName": "?????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1bWMbXyLqrcH1Cxbo3Dk_-aSdgfWGC5wk"
+      },
+      {
+        "name": "?????",
+        "originalName": "?????.heif",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1aip2VuR4DW_zyK6os6lnIgfj_s3RDuPm"
+      }
+    ],
+    "rice": [
+      {
+        "name": "???????",
+        "originalName": "cover_???????.jpg",
+        "isCover": true,
+        "url": "https://lh3.googleusercontent.com/d/1fmSlN543E6YSToVXbNl8VWjbx7_RbB77"
+      }
+    ],
+    "sansai": [
+      {
+        "name": "??????",
+        "originalName": "??????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1GTbytYOBX26JaKK8yMKHkXYwJpTvtDqx"
+      },
+      {
+        "name": "??????",
+        "originalName": "??????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1ah4M5sx8ytlWW__RnCr4VCK0GlBRo6j3"
+      },
+      {
+        "name": "??????",
+        "originalName": "??????.HEIC",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1MeTXEJX9iEfzL51ZCVlkE0GzXyciHzF6"
+      },
+      {
+        "name": "?????",
+        "originalName": "cover_?????.jpg",
+        "isCover": true,
+        "url": "https://lh3.googleusercontent.com/d/1oX4s_-xUo22XDsefxNZNHTXylqdN3vCl"
+      }
+    ],
+    "shiitake": [
+      {
+        "name": "?????????",
+        "originalName": "?????????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1VWdnK1_GQ5yElwXBmSxd41-Pg8LI919L"
+      },
+      {
+        "name": "????????",
+        "originalName": "????????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/16u6ISJxgbhftkkSivP5zkAKirLu2dFHb"
+      },
+      {
+        "name": "???????",
+        "originalName": "???????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1YC_Gn1CFzshw-6XMInUi7J3GXT5neURG"
+      },
+      {
+        "name": "???????",
+        "originalName": "???????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1YwNkStWg7L6dAT4ijO0NwN6T8CccFShm"
+      },
+      {
+        "name": "???????",
+        "originalName": "???????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1a_ql6_uP3hr4cPA0Czmcxyjh5GxdQVeP"
+      },
+      {
+        "name": "???????",
+        "originalName": "???????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/16v1z_ofrSUvvcD2Wrj7HGk7WRXeL60RQ"
+      },
+      {
+        "name": "??????",
+        "originalName": "??????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1ZZ83Mu24PUQUOK-Zs-CsAFDm7s2kYG26"
+      },
+      {
+        "name": "??????????",
+        "originalName": "??????????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1KhwIkD9oaYxkEQfAINrk8tTHdAy7q64I"
+      },
+      {
+        "name": "??????????",
+        "originalName": "??????????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1R6duElyC1XkoybtwDu9B4MGIYxeos65T"
+      },
+      {
+        "name": "?????????",
+        "originalName": "?????????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1wSthsYYYzn-BvpuvdIEcJNY4xGl1IhvD"
+      },
+      {
+        "name": "???????",
+        "originalName": "cover_???????.jpg",
+        "isCover": true,
+        "url": "https://lh3.googleusercontent.com/d/1qiD8FxH7D_wcSv9W0-cJo_4cTtssjGd4"
+      }
+    ],
+    "soybean": [],
+    "sunflower": [],
+    "wheat": [
+      {
+        "name": "?????",
+        "originalName": "?????.HEIC",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1aOtq_F0PaG1lYJCD1QJ7SbiC93qNZUbV"
+      },
+      {
+        "name": "???",
+        "originalName": "???.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1nzuxLlpcPOIRgr7UCLny8ruid_BGSG9p"
+      },
+      {
+        "name": "??",
+        "originalName": "??.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1G9sXFIbcEpuRMlDtB9LvVAYzYzxLu1c5"
+      },
+      {
+        "name": "????",
+        "originalName": "cover_????.heif",
+        "isCover": true,
+        "url": "https://lh3.googleusercontent.com/d/1fyL66frPrCtigFaRkXY1qtDIj0_wOlce"
+      }
+    ]
+  }
+}
