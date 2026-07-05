@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport"
-        content="width=device-width, initial-scale=1.0>"
+        content="width=device-width, initial-scale=1.0">
         <title>T.Tファーム</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -113,12 +113,13 @@
             }
 
             .hero{
-                background-image:url("./images/main.jpg");
-                background-size:100% auto;
-                background-repeat:no-repeat;
-                background-position:top center;
-                height:850px;
-                background-color:#fffaf0;
+                width:100%;                
+            }
+
+            .hero img{
+                display:block;
+                width:100%;
+                height:auto;
             }
     
             .message{
@@ -221,7 +222,9 @@
                 }
 
                 .hero{
-                    height:360px;
+                    height:300px;
+                    background-size:contain;
+                    background-position:center;
                 }
 
                 .message{
@@ -267,7 +270,9 @@
             <a href="contact.html">お問い合わせ</a>
         </nav>
 
-        <section class="hero"></section>
+        <section class="hero">
+            <img src="images/main.jpg" alt="T.Tファーム">
+        </section>
 
         <section class="message">
             <h2>ようこそT.Tファームへ！</h2>
