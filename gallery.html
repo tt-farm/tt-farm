@@ -263,9 +263,70 @@
                 header h1{
                     font-size:30px;
                 }
-            }    
+            }
+            
+            .lightbox{
+                display:none;
+                position:fixed;
+                inset:0;
+                background:rgba(0,0,0,0.9);
+                justify-content:center;
+                align-items:center;
+                z-index:9999;
+            }
+
+            .lightbox.open{
+                display:flex;
+            }
+
+            .lightbox img{
+                max-width:90%;
+                max-height:85%;
+                object-fit:contain;
+                border-radius:10px;
+            }
+
+            .lightbox-close,
+            .lightbox-prev,
+            .lightbox-next{
+                position:absolute;
+                color:white;
+                font-size:45px;
+                cursor:pointer;
+                user-select:none;
+            }
+
+            .lightbox-close{
+                top:20px;
+                right:30px;
+            }
+
+            .lightbox-prev{
+                left:25px;
+                top:50%;
+                transform:translateY(-50%);
+            }
+
+            .lightbox-next{
+                right:25px;
+                top:50%;
+                transform:translateY(-50%);
+            }
+
+            .lightbox-caption{
+                position:absolute;
+                bottom:25px;
+                left:50%;
+                transform:translateX(-50%);
+                color:white;
+                text-align:center;
+                font-size:18px;
+            }
                                 
         </style>
+
+        
+
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-S2LG05GGPD"></script>
         <script>
@@ -464,10 +525,15 @@
                             </div>
                         `;                
 
-                    photos.forEach(photo => {
+                    currentPhotos = photos;
+
+                    photos.forEach((photo,index) => {
                         gallery.innerHTML += `
                             <div class="photo-card">
-                                <img src="${photo.url}" alt="${photo.name}">
+                                <img src="${photo.url}"
+                                 alt="${photo.name}"
+                                 onclick="openLightbox(${index})"
+                                 style="cursor:zoom-in;">
                                 <p>${photo.name}</p>
                             </div>
                         `;
@@ -479,7 +545,83 @@
                 const menu = document.getElementById("nav-menu");
                 menu.classList.toggle("open");
             }
+
+            let currentPhotos = [];
+            let currentIndex = 0;
+
+            function openLightbox(index){
+
+                currentIndex = index;
+
+                document.getElementById("lightbox").classList.add("open");
+
+                showLightboxPhoto();
+            }
+
+            function showLightboxPhoto(){
+
+                const photo = currentPhotos[currentIndex];
+
+                document.getElementById("lightbox-img").src = photo.url;
+
+                document.getElementById("lightbox-caption").textContent =
+                    photo.name + "　(" + (currentIndex+1) + " / " + currentPhotos.length + ")";
+            }
+
+            function closeLightbox(){
+
+                document.getElementById("lightbox").classList.remove("open");
+            }
+
+            function nextPhoto(){
+
+                currentIndex++;
+
+                if(currentIndex >= currentPhotos.length){
+                    currentIndex = 0;
+                }
+
+                showLightboxPhoto();
+            }
+
+            function prevPhoto(){
+
+                currentIndex--;
+
+                if(currentIndex < 0){
+                    currentIndex = currentPhotos.length-1;
+                }
+
+                showLightboxPhoto();
+            }
+
+            document.addEventListener("keydown",e=>{
+
+                if(!document.getElementById("lightbox").classList.contains("open")) return;
+
+                if(e.key==="ArrowRight") nextPhoto();
+
+                if(e.key==="ArrowLeft") prevPhoto();
+
+                if(e.key==="Escape") closeLightbox();
+
+            });
+
         </script>
+
+        <div id="lightbox" class="lightbox">
+
+            <span class="lightbox-close" onclick="closeLightbox()">×</span>
+
+            <span class="lightbox-prev" onclick="prevPhoto()">❮</span>
+
+            <img id="lightbox-img">
+
+            <span class="lightbox-next" onclick="nextPhoto()">❯</span>
+
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+
+        </div>
 
     </body>
 </html>
