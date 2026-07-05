@@ -219,6 +219,41 @@
                     height:auto;
                 }
             }
+
+            .lightbox{
+                display:none;
+                position:fixed;
+                inset:0;
+                background:rgba(0,0,0,0.9);
+                justify-content:center;
+                align-items:center;
+                z-index:9999;
+            }
+
+            .lightbox.open{
+                display:flex;
+            }
+
+            .lightbox img{
+                max-width:90%;
+                max-height:90%;
+                object-fit:contain;
+                border-radius:10px;
+            }
+
+            .lightbox-close{
+                position:absolute;
+                top:20px;
+                right:30px;
+                color:white;
+                font-size:40px;
+                cursor:pointer;
+            }
+
+            .lightbox img{
+                cursor:zoom-out;
+            }
+
         </style>
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-S2LG05GGPD"></script>
@@ -535,7 +570,11 @@
                 const photoClass = getPhotoClass(images.length);
 
                 const imageHtml = images.map(image => `
-                    <img src="${image}" alt="${item.title}" class="diary-photo">
+                    <img src="${image}"
+                    alt="${item.title}"
+                    class="diary-photo"
+                    onclick="openLightbox('${image}')"
+                    style="cursor:zoom-in">
                 `).join("");
 
                 container.innerHTML += `
@@ -585,7 +624,30 @@
             const menu = document.getElementById("nav-menu");
             menu.classList.toggle("open");
         }
+
+        function openLightbox(src){
+
+            document.getElementById("lightbox-img").src = src;
+
+            document.getElementById("lightbox").classList.add("open");
+
+        }
+
+        function closeLightbox(){
+
+            document.getElementById("lightbox").classList.remove("open");
+
+        }
+
     </script>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+
+        <span class="lightbox-close">&times;</span>
+
+        <img id="lightbox-img" onclick="event.stopPropagation();">
+
+    </div>
 
     </body>
 </html>
