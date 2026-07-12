@@ -4,12 +4,33 @@
         <meta charset="UTF-8">
         <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
-        <title>T.Tファーム</title>
+        <title>T.Tファーム｜長野県・信州の農園</title>
 
+        <meta name="description" content="T.Tファームは長野県・信州でぶどう、原木しいたけ、米、もも、山菜、小菊、ひまわり、小麦、大豆などを育てる農園です。若手農家が農園日記や生き物の写真を通して、農業と自然の魅力を発信しています。">
+
+        <link rel="canonical" href="https://tt-farm.com/">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
         
+        <!-- OGP -->
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="T.Tファーム">
+        <meta property="og:title" content="T.Tファーム｜長野県・信州の農園">
+        <meta property="og:description"
+        content="ぶどう、原木しいたけ、米、もも、山菜、小菊、ひまわり、小麦、大豆などを育てるT.Tファーム。農園日記や生き物の写真を通して、農業と自然の魅力を発信しています。">
+        <meta property="og:url" content="https://tt-farm.com/">
+        <meta property="og:image" content="https://tt-farm.com/images/main.jpg">
+        <meta property="og:image:alt" content="T.Tファームの作物と農園の風景">
+        <meta property="og:locale" content="ja_JP">
+
+        <!-- Xなどで共有されたときの表示 -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="T.Tファーム｜長野県・信州の農園">
+        <meta name="twitter:description"
+        content="若手農家が作物を育て、農園の日常や生き物、農業の魅力を発信しています。">
+        <meta name="twitter:image" content="https://tt-farm.com/images/main.jpg">
+
         <style>
             body{
                 margin:0;
@@ -142,13 +163,38 @@
                 line-height:2;
             }
 
+            .main-link{
+                display:inline-block;
+                margin-top:10px;
+                padding:12px 24px;
+                border-radius:8px;
+                background:#6d8f3f;
+                color:white;
+                text-decoration:none;
+                font-weight:bold;
+            }
+
+            .main-link:hover{
+                background:#33691E;
+            }
+
+            .home-section{
+                max-width:1200px;
+                margin:50px auto;
+                padding:0 20px;
+            }
+
+            .home-section > h2{
+                text-align:center;
+                color:#6d8f3f;
+                font-size:30px;
+                margin-bottom:30px;
+            }
+
             .cards{
                 display:grid;
                 grid-template-columns:repeat(3,1fr);
                 gap:30px;
-                max-width:1200px;
-                margin:50px auto;
-                padding:0 20px;
                 align-items:stretch;
             }
 
@@ -209,6 +255,10 @@
                 padding:20px;
             }
 
+            footer a{
+                color:white;
+            }
+
             @media(max-width:768px){
                 header h1{
                     font-size:30px;
@@ -219,12 +269,6 @@
                     text-align:center;
                     border-bottom:1px solid
                     rgba(255,255,255,0.2);
-                }
-
-                .hero{
-                    height:300px;
-                    background-size:contain;
-                    background-position:center;
                 }
 
                 .message{
@@ -252,7 +296,7 @@
                 <span class="logo-tt">T.T</span>
                 <span class="logo-ja">ファーム</span>
             </h1>
-            <p>農業の価値を未来へ</p>
+            <p>長野県・信州から、農業の価値を未来へ</p>
         </header>
 
         <button class="menu-button"
@@ -271,82 +315,135 @@
         </nav>
 
         <section class="hero">
-            <img src="images/main.jpg" alt="T.Tファーム">
+            <img src="images/main.jpg" alt="長野県・信州で農産物を育てるT.Tファーム">
         </section>
 
         <section class="message">
-            <h2>ようこそT.Tファームへ！</h2>
+            <h2>育てる楽しさ、食べる喜び、自然のおもしろさを。</h2>
 
             <p>
-                私たちは信州の豊かな自然の中で、さまざまな作物を育てています。
-                「育てる楽しさ」と「食べる喜び」を皆さまにお届けします。
+                T.Tファームは、長野県・信州の自然の中で、
+                ぶどう、原木しいたけ、米、もも、山菜、小菊、ひまわり、小麦、大豆など、
+                季節ごとのさまざまな作物を育てる農園です。
             </p>
+
+            <p>
+                若手農家ならではの視点で、作物が育つまでの農作業や農園の日常、
+                カエルやサワガニなど農園で出会った生き物の姿を発信しています。
+                子どもから大人まで、農業や自然を楽しく知ることのできる農園を目指しています。
+            </p>
+
+            <a class="main-link" href="about.html">T.Tファームについて詳しく見る</a>
         </section>
 
-        <section class="cards">
+        <section class="home-section">
+            <h2>信州の自然の中で育てる作物</h2>
+            <div class="cards">
+                <a class="card link-card" href="gallery.html?category=grape">
+                    <img src="images/grape.jpg" alt="長野県・信州で育てるT.Tファームのぶどう">
+                    <h3>ぶどう</h3>
+                    <p>
+                        クイーンルージュ®、シャインマスカット、ナガノパープル、
+                        クイーンニーナ、ふじのかがやきなどを育てています。
+                    </p>
+                </a>
 
-            <div class="card link-card" onclick="location.href='gallery.html?category=grape'">
-                <img src="images/grape.jpg" alt="ぶどう">
-                <h3>ぶどう</h3>
-                <p>
-                    信州の豊かな自然の中で育ったぶどう。
-                    季節ごとの作業や成長の様子をご紹介します。
-                </p>
-            </div>
+                <a class="card link-card" href="gallery.html?category=shiitake">
+                    <img src="images/shiitake.jpg" alt="T.Tファームで育てる原木しいたけ">
+                    <h3>原木しいたけ</h3>
+                    <p>
+                        自然の力を生かした原木栽培。
+                        収穫や天日干し、乾燥しいたけづくりの様子も紹介します。
+                    </p>
+                </a>
 
-            <div class="card link-card" onclick="location.href='gallery.html?category=shiitake'">
-                <img src="images/shiitake.jpg" alt="しいたけ">
-                <h3>しいたけ</h3>
-                <p>
-                    原木栽培ならではの魅力や、収穫の様子をご紹介します。
-                </p>
-            </div>
+                <a class="card link-card" href="gallery.html?category=rice">
+                    <img src="images/rice.jpg" alt="長野県・信州で育てるT.Tファームの米">
+                    <h3>米</h3>
+                    <p>
+                        コシヒカリやつきあかりを栽培。
+                        田植えから稲刈りまで、米づくりの様子を紹介します。
+                    </p>
+                </a>
 
-            <div class="card link-card" onclick="location.href='gallery.html?category=rice'">
-                <img src="images/rice.jpg" alt="米">
-                <h3>米</h3>
-                <p>
-                    信州の自然の中で育つお米。
-                    田んぼの様子や季節ごとの作業をご紹介します。
-                </p>
-            </div>
+                <a class="card link-card" href="gallery.html?category=sansai">
+                    <img src="images/sansai.jpg" alt="長野県・信州で採れる春の山菜">
+                    <h3>山菜</h3>
+                    <p>
+                        コシアブラ、タラノメ、こごみ、ウド、ふきなど、
+                        信州の春の山菜を紹介しています。
+                    </p>
+                </a>
 
-            <div class="card link-card" onclick="location.href='gallery.html?category=sansai'">
-                <img src="images/sansai.jpg" alt="山菜">
-                <h3>山菜</h3>
-                <p>
-                    里山で出会う季節の山菜。
-                    自然の恵みを大切にお届けします。
-                </p>
-            </div>
+                <a class="card link-card" href="gallery.html?category=chrysanthemum">
+                    <img src="images/chrysanthemum.jpg" alt="長野県・信州で育てるT.Tファームの小菊">
+                    <h3>小菊</h3>
+                    <p>
+                        信州の自然の中で育てる小菊。
+                        植え付けから開花、収穫までの様子を紹介しています。
+                    </p>
+                </a>
 
-            <div class="card link-card" onclick="location.href='gallery.html?category=wheat'">
-                <img src="images/wheat.jpg" alt="小麦">
-                <h3>小麦</h3>
-                <p>
-                    北アルプスを望む景色の中で育つ小麦。
-                    麦の成長や収穫の様子をご紹介します。
-                </p>
+                <a class="card link-card" href="gallery.html?category=wheat">
+                    <img src="images/wheat.jpg" alt="長野県・信州の畑で育つ小麦">
+                    <h3>小麦</h3>
+                    <p>
+                        種まきから成長、収穫まで、
+                        季節とともに変わる小麦畑の様子をお届けします。
+                    </p>
+                </a>
             </div>
 
         </section>
         
-        <section class="cards">
-            <div class="card link-card" onclick="location.href='about.html'">
-                <h3>農園紹介</h3>
-                <p>信州の自然の中で育つ作物や、私たちの思いを紹介します。</p>
+        <section class="home-section">
+            <h2>T.Tファームをもっと楽しむ</h2>
+
+            <div class="cards">
+                <a class="card link-card" href="about.html">
+                    <h3>農園紹介</h3>
+                    <p>
+                        若手農家が作物や自然と向き合う思い、
+                        T.Tファームの農業について紹介します。
+                    </p>
+                </a>
+
+                <a class="card link-card" href="gallery.html">
+                    <h3>ギャラリー</h3>
+                    <p>
+                        作物の成長、農園の風景、
+                        カエルやサワガニなどの生き物を写真でご覧いただけます。
+                    </p>
+                </a>
+
+                <a class="card link-card" href="diary.html">
+                    <h3>農園日記</h3>
+                    <p>
+                        ぶどうや原木しいたけ、米、小麦などの栽培記録と、
+                        土まみれの農作業の日常をお届けします。
+                    </p>
+                </a>
+
+                <a class="card link-card" href="https://ttfarm.theshop.jp" target="_blank" rel="noopener noreferrer">
+                    <h3>農産物を購入する</h3>
+                    <p>
+                        T.Tファームの季節の農産物を、
+                        オンラインショップからご覧いただけます。
+                    </p>
+                </a>
             </div>
 
-            <div class="card link-card" onclick="location.href='gallery.html'"">
-                <h3>ギャラリー</h3>
-                <p>畑の風景や作物の成長、季節ごとの写真をお届けします。</p>
-            </div>
+        </section>
 
-            <div class="card link-card" onclick="location.href='diary.html'"">
-                <h3>農園日記</h3>
-                <p>農園での出来事や作物の成長、季節ごとの様子を日々更新しています。</p>
-            </div>
-
+        <section class="message">
+            <h2>土まみれ農家の日常</h2>
+            <p>
+                農作業の裏側や、農園で出会った生き物たちの姿を
+                YouTube「土まみれ農家の日常」で発信していきます
+            </p>
+            <a class="main-link" href="https://youtube.com/channel/UCWCrfZPdQvZXiJXD6ffQQnA?si=4Xva8m6RVkRZvQrc" target="_blank" rel="noopener noreferrer">
+                YouTubeを見る
+            </a>
         </section>
      
         <footer>
