@@ -43,7 +43,7 @@
                 padding:22px;
             }
 
-            header h1{
+            .site-logo{
                 margin:0;
                 font-size:42px;
             }
@@ -278,7 +278,7 @@
             }
 
             @media(max-width:768px){
-                header h1{
+                .site-logo{
                     font-size:30px;
                 }
             }
@@ -421,7 +421,7 @@
 
             <span class="lightbox-prev" onclick="prevPhoto()">❮</span>
 
-            <img id="lightbox-img">
+            <img id="lightbox-img" alt="">
 
             <span class="lightbox-next" onclick="nextPhoto()">❯</span>
 
@@ -437,7 +437,7 @@
 
             const categoryNames = {
                 grape:"ぶどう",
-                shiitake:"しいたけ",
+                shiitake:"原木しいたけ",
                 rice:"米",
                 peach:"もも",
                 sansai:"山菜",
@@ -608,8 +608,10 @@
             function showLightboxPhoto(){
 
                 const photo = currentPhotos[currentIndex];
+                const lightbokImg = document.getElementById("lightbox-img");
 
-                document.getElementById("lightbox-img").src = photo.url;
+                lightbokImg.src = photo.url;
+                lightbokImg.alt = photo.name;
 
                 document.getElementById("lightbox-caption").textContent =
                     photo.name + "　(" + (currentIndex+1) + " / " + currentPhotos.length + ")";
