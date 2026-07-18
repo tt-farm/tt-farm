@@ -217,6 +217,29 @@
                 font-weight:bold;
                 margin:14px;
             }
+
+            .about-links{
+                display:flex;
+                justify-content:center;
+                flex-wrap:wrap;
+                gap:15px;
+                margin-top:20px;
+            }
+
+            .about-links a{
+                display:inline-block;
+                background:#6d8f3f;
+                color:white;
+                text-decoration:none;
+                padding:12px 24px;
+                border-radius:8px;
+                font-weight:bold;
+                transition:0.3s;
+            }
+
+            .about-links a:hover{
+                background:#33691E;
+            }
         
             footer{
                 background:#33691E;
@@ -280,6 +303,19 @@
             @media(max-width:768px){
                 .site-logo{
                     font-size:30px;
+                }
+            }
+
+            @media(max-width:600px){
+                .about-links{
+                    flex-direction:column;
+                    align-items:center;
+                }
+
+                .about-links a{
+                    width:90%;
+                    max-width:320px;
+                    text-align:center;
                 }
             }
             
