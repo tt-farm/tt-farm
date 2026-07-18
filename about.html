@@ -203,16 +203,24 @@
             }
 
             .animal-card{
+                display:block;
                 background:white;
                 border-radius:12px;
                 overflow:hidden;
                 box-shadow:0 4px 10px rgba(0,0,0,0.1);
+                color:#333;
+                text-decoration:none;
+                transition:transform 0.3s;
             }
 
             .animal-card img{
                 width:100%;
                 height:220px;
                 object-fit:cover;
+            }
+
+            .animal-card hover{
+                transform:translateY(-4px);
             }
 
             .animal-card h3{
@@ -399,17 +407,17 @@
                 </p>
 
                 <div class="animal-cards">
-                    <a class="animal-card" href="gallery.html?category=animal">
+                    <a class="animal-card" href="gallery.html?category=animals">
                         <img src="images/frog.jpg" alt="T.Tファームの農園で見つけたカエル">
                         <h3>カエル</h3>    
                     </a>
 
-                    <a class="animal-card" href="gallery.html?category=animal">
+                    <a class="animal-card" href="gallery.html?category=animals">
                         <img src="images/crab.jpg" alt="T.Tファームの農園で見つけたサワガニ">
                         <h3>サワガニ</h3>    
                     </a>
 
-                    <a class="animal-card" href="gallery.html?category=animal">
+                    <a class="animal-card" href="gallery.html?category=animals">
                         <img src="images/inchworm.jpg" alt="T.Tファームの農園で見つけたしゃくとりむし">
                         <h3>しゃくとりむし</h3>    
                     </a>
