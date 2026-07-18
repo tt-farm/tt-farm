@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
-        <title>T.Tファーム|イベント</title>
+        <title>イベント|T.Tファーム</title>
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,7 @@
                 padding:22px;
             }
 
-            header h1{
+            .site-logo{
                 margin:0;
                 font-size:42px;
             }
@@ -77,6 +77,43 @@
             }
             nav a:hover{
                 background:#558B2F;
+            }
+
+            .site-logo{
+                margin:0;
+                font-size:42px;
+            }
+
+            .page-title{
+                text-align:center;
+                color:#33691E;
+                margin-bottom:30px;
+            }
+
+            .about-links{
+                display:flex;
+                justify-content:center;
+                flex-wrap:wrap;
+                gap:15px;
+                margin-top:20px;
+            }
+
+            .about-links a{
+                display:inline-block;
+                background:#6d8f3f;
+                color:white;
+                text-decoration:none;
+                padding:12px 24px;
+                border-radius:8px;
+                font-weight:bold;
+            }
+
+            .about-links a:hover{
+                background:#33691E;
+            }
+
+            footer a{
+                color:white;
             }
 
             @media(max-width:768px){
@@ -182,10 +219,10 @@
     <body>
 
         <header>
-            <h1>
+            <div=class="site-logo">
                 <span class="logo-tt">T.T</span>
                 <span class="logo-ja">ファーム</span>
-            </h1>
+            </div>
             <p>イベント</p>
         </header>
 
@@ -204,7 +241,9 @@
             <a href="contact.html">お問い合わせ</a>
         </nav>
 
-        <section class="section">
+        <main>
+
+        <h1 class="page-title">イベント情報</h1>
             <h2>準備中</h2>
             <p>
                 現在準備中です。
@@ -212,6 +251,18 @@
             </p>
 
         </section>
+
+        <section class="section">
+            <h2>T.Tファームをもっと知る</h2>
+
+            <div class="about-links">
+                <a href="about.html">農園紹介を見る</a>
+                <a href="gallery.html">ギャラリーを見る</a>
+                <a href="diary.html">農園日記を読む</a>
+                <a href="contact.html">お問い合わせ</a>
+            </div>
+        </section>
+        </main>
 
         <footer>
              <p>
