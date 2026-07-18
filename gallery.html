@@ -4,12 +4,30 @@
         <meta charset="UTF-8">
         <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
-        <title>T.Tファーム|ギャラリー</title>
+        <title>ギャラリー｜T.Tファーム｜長野県・信州の農園写真</title>
         
+        <meta name="description" content="T.Tファームのギャラリーです。長野県・信州で育てるぶどう、原木しいたけ、米、もも、山菜、小菊、ひまわり、小麦、大豆の写真や農園で出会った生き物をご紹介します。">
+
+        <link rel="canonical" href="https://tt-farm.com/gallery.html">
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
         
+        <meta property="og:title" content="ギャラリー｜T.Tファーム">
+
+        <meta property="og:description" content="ぶどう、原木しいたけ、米、もも、山菜、小菊、ひまわり、小麦、大豆の栽培風景や、農園で出会った生き物をご紹介します。">
+
+        <meta property="og:url" content="https://tt-farm.com/gallery.html">
+
+        <meta property="og:type" content="website">
+
+        <meta property="og:image" content="https://tt-farm.com/images/shiitake.jpg">
+
+        <meta property="og:site_name" content="T.Tファーム">
+
+        <meta name="twitter:card" content="summary_large_image">
+
         <style>
             body{
                 margin:0;
@@ -340,10 +358,10 @@
     <body>
 
         <header>
-             <h1>
+             <div class="site-logo">
                 <span class="logo-tt">T.T</span>
                 <span class="logo-ja">ファーム</span>
-            </h1>
+             </div>
             <p>ギャラリー</p>
         </header>
 
@@ -358,17 +376,31 @@
             <a href="diary.html">農園日記</a>
             <a href="quiz.html">クイズ</a>
             <a href="event.html">イベント</a>
-            <a href="https://ttfarm.theshop.jp" target="_blank">購入（外部サイト）</a>
+            <a href="https://ttfarm.theshop.jp" target="_blank" rel="noopener noreferrer">購入（外部サイト）</a>
             <a href="contact.html">お問い合わせ</a>
         </nav>
 
         <main>
             
-            <h2 class="page-title">農園の風景</h2>
+            <h1 class="page-title">ギャラリー</h1>
+
+            <p>
+                T.Tファームで育てている作物や、農園で出会った生き物、信州の自然を写真でご紹介します。
+                気になるカテゴリーを選んでご覧ください。
+            </p>
 
             <div class="category-buttons" id="category-buttons"></div>
 
             <section class="gallery" id="gallery"></section>
+
+            <section class="section">
+                <h2>T.Tファームをもっと知る</h2>
+                <div class="about-links">
+                    <a href="about.html">農園紹介を見る</a>
+                    <a href="diary.html">農園日記を読む</a>
+                    <a href="https://ttfarm.theshop.jp" target="_blank" rel="noopener noreferrer">オンラインショップ</a>
+                </div>
+            </section>
 
         </main>
 
@@ -406,11 +438,11 @@
             const categoryNames = {
                 grape:"ぶどう",
                 shiitake:"しいたけ",
-                rice:"米",                
-                sunflower:"ひまわり",
-                chrysanthemum:"小菊",
-                sansai:"山菜",
+                rice:"米",
                 peach:"もも",
+                sansai:"山菜",
+                chrysanthemum:"小菊",                
+                sunflower:"ひまわり",
                 wheat:"小麦",
                 soybean:"大豆",
                 products:"商品",
@@ -481,7 +513,7 @@
 
                     gallery.innerHTML += `
                         <div class="photo-card category-card" onclick="showGallery('${category}')">
-                            <img src="${cover.url}" alt="${categoryNames[category]}">
+                            <img src="${cover.url}" alt="${categoryNames[category]}の写真">
                             <p>${categoryNames[category]}</p>
                         </div>
                     `;
