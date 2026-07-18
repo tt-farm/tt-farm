@@ -415,6 +415,8 @@
             "大豆":"大豆",    
         };
 
+        const categories = Object.keys(categoryLabels);
+
         const months = [
             "すべて","1月","2月","3月","4月","5月","6月",
             "7月","8月","9月","10月","11月","12月"
@@ -655,7 +657,7 @@
 
                 const imageHtml = images.map((image, index) => `
                     <img src="${image}"
-                    alt="${item.date} ${item.category} 「${item.title}」の農園写真${images.length >1 ? ` ${index + 1}` : ""}"
+                    alt="${item.date} ${categoryLabels[item.category]} 「${item.title}」の農園写真${images.length >1 ? ` ${index + 1}` : ""}"
                     class="diary-photo"
                     onclick="openLightbox('${image}')"
                     style="cursor:zoom-in">
