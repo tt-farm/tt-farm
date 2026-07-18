@@ -4,7 +4,25 @@
         <meta charset="UTF-8">
         <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
-        <title>T.Tファーム|お問い合わせ</title>
+        <title>お問い合わせ|T.Tファーム|商品・農園へのお問い合わせ</title>
+
+        <meta name="description" content="T.Tファームへのお問い合わせはこちら。ご質問・ご相談など、お気軽にお問い合わせください。">
+
+        <link rel="canonical" href="https://tt-farm.com/contact.html">
+
+        <meta property="og:title" content="お問い合わせ｜T.Tファーム">
+
+        <meta property="og:description" content="商品や農園についてのお問い合わせはこちらからお気軽にご連絡ください。">
+
+        <meta property="og:url" content="https://tt-farm.com/contact.html">
+
+        <meta property="og:type" content="website">
+
+        <meta property="og:image" content="https://tt-farm.com/images/main.jpg">
+
+        <meta property="og:site_name" content="T.Tファーム">
+
+        <meta name="twitter:card" content="summary_large_image">
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +43,7 @@
                 padding:22px;
             }
 
-            header h1{
+            .site-logo{
                 margin:0;
                 font-size:42px;
             }
@@ -160,6 +178,28 @@
                 text-decoration:underline;
             }
 
+            .about-links{
+                display:flex;
+                justify-content:center;
+                flex-wrap:wrap;
+                gap:15px;
+                margin-top:20px;
+            }
+
+            .about-links a{
+                display:inline-block;
+                background:#6d8f3f;
+                color:white;
+                text-decoration:none;
+                padding:12px 24px;
+                border-radius:8px;
+                font-weight:bold;
+            }
+
+            .about-links a:hover{
+                background:#33691E;
+            }
+
             footer{
                 background:#6d8f3f;
                 color:white;
@@ -167,8 +207,12 @@
                 padding:20px;
             }
 
+            footer a{
+                color:white;
+            }
+
             @media(max-width:768px){
-                header h1{
+                .site-logo{
                     font-size:30px;
                 }
                 
@@ -205,10 +249,10 @@
     <body>
 
         <header>
-            <h1>
+            <div class="site-logo">
                 <span class="logo-tt">T.T</span>
                 <span class="logo-ja">ファーム</span>
-            </h1>
+            </div>
             <p>お問い合わせ</p>
         </header>
 
@@ -227,14 +271,15 @@
             <a href="contact.html">お問い合わせ</a>
         </nav>
 
+        <main>
         <section class="section">
-            <h2>お問い合わせ</h2>
+            <h1>お問い合わせ</h1>
             <p>
-                T.Tファームへのお問い合わせは、
-                メール・LINEからお気軽にどうぞ。
+                長野県・信州の自然の中で、ぶどうや原木しいたけなどを育てています。
+                商品や農園について気になることがありましたら、どうぞお気軽にお問合わせください。
             </p>
 
-            <div class=""contact-box">
+            <div class="contact-box">
                 <h3>メール</h3>
                 <p>info@tt-farm.com</p>
 
@@ -256,7 +301,7 @@
                 <p>
                     商品のご購入はオンラインショップ（外部サイト）をご利用ください。
                     <br>
-                    <a href="https://ttfarm.theshop.jp" target="_brank">
+                    <a href="https://ttfarm.theshop.jp" target="_blank">
                         T.Tファーム オンラインショップ
                     </a>
                 </p>
@@ -264,6 +309,17 @@
             </div>
 
         </section>
+
+        <section class="section">
+            <h2>T.Tファームをもっと知る</h2>
+            <div class="about-links">
+                <a href="about.html">農園紹介を見る</a>
+                <a href="gallery.html">ギャラリーを見る</a>
+                <a href="diary.html">農園日記を読む</a>
+                <a href="https://ttfarm.theshop.jp" target="_blank" rel="noopener noreferrer">オンラインショップ</a>
+            </div>
+        </section>
+        </main>
 
         <footer>
              <p>
