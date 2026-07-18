@@ -608,10 +608,10 @@
             function showLightboxPhoto(){
 
                 const photo = currentPhotos[currentIndex];
-                const lightbokImg = document.getElementById("lightbox-img");
+                const lightboxImg = document.getElementById("lightbox-img");
 
-                lightbokImg.src = photo.url;
-                lightbokImg.alt = photo.name;
+                lightboxImg.src = photo.url;
+                lightboxImg.alt = photo.name;
 
                 document.getElementById("lightbox-caption").textContent =
                     photo.name + "　(" + (currentIndex+1) + " / " + currentPhotos.length + ")";
