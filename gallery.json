@@ -6,7 +6,12 @@
       "isCover": true,
       "url": "https://lh3.googleusercontent.com/d/1-ryGOmDGZVXb5SIgOFVrlEYVvYqlu_4A"
     },
-    "chrysanthemum": null,
+    "chrysanthemum": {
+      "name": "?????",
+      "originalName": "cover_?????",
+      "isCover": true,
+      "url": "https://lh3.googleusercontent.com/d/1nfIhCznjxo_yE-6mSj-Fzkfz5UE7F9oR"
+    },
     "grape": {
       "name": "???????",
       "originalName": "cover_???????.jpg",
@@ -80,8 +85,27 @@
         "url": "https://lh3.googleusercontent.com/d/1z2QdvGz4TE32uvI-LGwuR3IhelSX-DUv"
       }
     ],
-    "chrysanthemum": [],
+    "chrysanthemum": [
+      {
+        "name": "?????",
+        "originalName": "cover_?????",
+        "isCover": true,
+        "url": "https://lh3.googleusercontent.com/d/1nfIhCznjxo_yE-6mSj-Fzkfz5UE7F9oR"
+      }
+    ],
     "grape": [
+      {
+        "name": "????????",
+        "originalName": "????????",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1_j7Q1wZNyvUaUJ-XpCzCKu4XhTtfbZJ8"
+      },
+      {
+        "name": "???????",
+        "originalName": "???????",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1GhCvcD-q8A-584ut3BG5f71_6Rqkjmxf"
+      },
       {
         "name": "???????",
         "originalName": "???????.jpg",
