@@ -7,22 +7,24 @@
         <title>ギャラリー｜T.Tファーム｜長野県・信州の農園写真</title>
         
         <meta name="description" content="T.Tファームのギャラリーです。長野県・信州で育てるぶどう、原木しいたけ、米、もも、山菜、小菊、ひまわり、小麦、大豆の写真や農園で出会った生き物をご紹介します。">
-
+        
         <link rel="canonical" href="https://tt-farm.com/gallery.html">
-
+        
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
         
         <meta property="og:title" content="ギャラリー｜T.Tファーム">
-
+        
         <meta property="og:description" content="ぶどう、原木しいたけ、米、もも、山菜、小菊、ひまわり、小麦、大豆の栽培風景や、農園で出会った生き物をご紹介します。">
-
+        
         <meta property="og:url" content="https://tt-farm.com/gallery.html">
+        
 
         <meta property="og:type" content="website">
 
         <meta property="og:image" content="https://tt-farm.com/images/shiitake.jpg">
+    
 
         <meta property="og:site_name" content="T.Tファーム">
 
@@ -391,6 +393,33 @@
                 text-align:center;
                 font-size:18px;
             }
+
+            #gallery-description{
+                max-width:900px;
+                margin:0 auto 30px;
+                line-height:1.9;
+            }
+
+            .gallery-heading{
+                grid-column:1 / -1;
+                text-align:center;
+                margin-bottom:10px;
+            }
+
+            .gallery-heading h2{
+                color:#6d8f3f;
+                margin:0 0 20px;
+            }
+
+            .gallery-heading .back-button,
+            .gallery-heading .diary-link{
+                margin:6px;
+            }
+
+            .gallery-loading{
+                grid-column:1 / -1;
+                text-align:center;
+            }
                                 
         </style>
 
@@ -434,10 +463,10 @@
             
             <h1 class="page-title">ギャラリー</h1>
 
-            <p>
+            <p id ="gallery-description">
                 T.Tファームで育てている作物や、農園で出会った生き物、信州の自然を写真でご紹介します。
                 気になるカテゴリーを選んでご覧ください。
-            </p>
+            </p>           
 
             <div class="category-buttons" id="category-buttons"></div>
 
@@ -500,6 +529,172 @@
                 machinery:"農機具",
             };
 
+            const categorySeo = {
+                grape:{
+                    title:"ぶどうギャラリー｜T.Tファーム｜長野市のぶどう栽培写真",
+                    description:"長野県長野市若穂保科・篠ノ井で育てるぶどうの栽培風景や成長の様子を、写真でご紹介します。",
+                    h1:"ぶどうギャラリー",
+                    h2:"長野市で育てるぶどうの写真",
+                    text:"長野市若穂保科・篠ノ井で育てているぶどうの栽培風景や、季節ごとの成長の様子をご紹介します。",
+                    ogImage:"https://tt-farm.com/images/grape.jpg"
+                },
+
+                shiitake:{
+                    title:"原木しいたけギャラリー｜T.Tファーム｜上田市真田町",
+                    description:"長野県上田市真田町で育てる原木しいたけの栽培風景や成長の様子を、写真でご紹介します。",
+                    h1:"原木しいたけギャラリー",
+                    h2:"上田市真田町で育てる原木しいたけの写真",
+                    text:"上田市真田町で育てている原木しいたけの発生や収穫、管理などの様子をご紹介します。",
+                    ogImage:"https://tt-farm.com/images/shiitake.jpg"
+                },
+
+                rice:{
+                    title:"米ギャラリー｜T.Tファーム｜長野市篠ノ井・須坂市",
+                    description:"長野市篠ノ井・須坂市で育てる米の栽培風景や成長の様子を、写真でご紹介します。",
+                    h1:"米ギャラリー",
+                    h2:"長野市篠ノ井・須坂市で育てる米の写真",
+                    text:"長野市篠ノ井・須坂市で育てている米の、田植えから生育、稲刈りまでの様子をご紹介します。",
+                    ogImage:"https://tt-farm.com/images/rice.jpg"
+                },
+
+                peach:{
+                    title:"ももギャラリー｜T.Tファーム｜長野市篠ノ井",
+                    description:"長野市篠ノ井で育てるももの栽培風景や成長の様子を、写真でご紹介します。",
+                    h1:"ももギャラリー",
+                    h2:"長野市篠ノ井で育てるももの写真",
+                    text:"長野市篠ノ井で育てているももの花や実の成長、農作業の様子をご紹介します。",
+                    ogImage:"https://tt-farm.com/images/peach.jpg"
+                },
+
+                sansai:{
+                    title:"山菜ギャラリー｜T.Tファーム｜上田市菅平高原",
+                    description:"上田市菅平高原の豊かな自然の中で採れる山菜や、季節の風景を写真でご紹介します。",
+                    h1:"山菜ギャラリー",
+                    h2:"上田市菅平高原の山菜の写真",
+                    text:"上田市菅平高原で出会う山菜や、季節ごとに変化する自然の様子をご紹介します。",
+                    ogImage:"https://tt-farm.com/images/sansai.jpg"
+                },
+
+                chrysanthemum:{
+                    title:"小菊ギャラリー｜T.Tファーム｜長野市篠ノ井",
+                    description:"長野市篠ノ井で育てる小菊の栽培風景や開花の様子を、T.Tファームの写真でご紹介します。",
+                    h1:"小菊ギャラリー",
+                    h2:"長野市篠ノ井で育てる小菊の写真",
+                    text:"長野市篠ノ井で育てている小菊の成長や開花、農作業の様子をご紹介します。",
+                    ogImage:"https://tt-farm.com/images/chrysanthemum.jpg"
+                },
+
+                sunflower:{
+                    title:"ひまわりギャラリー｜T.Tファーム｜長野市篠ノ井",
+                    description:"長野市篠ノ井で育てるひまわりの成長や開花の様子を、写真でご紹介します。",
+                    h1:"ひまわりギャラリー",
+                    h2:"長野市篠ノ井で育てるひまわりの写真",
+                    text:"長野市篠ノ井で育てているひまわりの成長や、畑いっぱいに咲く花の様子をご紹介します。",
+                    ogImage:"https://tt-farm.com/images/sunflower.jpg"
+                },
+
+                wheat:{
+                    title:"小麦ギャラリー｜T.Tファーム｜長野市若穂・篠ノ井",
+                    description:"長野市若穂・篠ノ井で育てる小麦の栽培風景や成長の様子を、写真でご紹介します。",
+                    h1:"小麦ギャラリー",
+                    h2:"長野市若穂・篠ノ井で育てる小麦の写真",
+                    text:"長野市若穂・篠ノ井で育てている小麦の生育や収穫、季節ごとの畑の様子をご紹介します。",
+                    ogImage:"https://tt-farm.com/images/wheat.jpg"
+                },
+
+                soybean:{
+                    title:"大豆ギャラリー｜T.Tファーム｜長野市若穂・篠ノ井",
+                    description:"長野市若穂・篠ノ井で育てる大豆の栽培風景や成長の様子を、写真でご紹介します。",
+                    h1:"大豆ギャラリー",
+                    h2:"長野市若穂・篠ノ井で育てる大豆の写真",
+                    text:"長野市若穂・篠ノ井で育てている大豆の成長や収穫、畑での農作業をご紹介します。",
+                    ogImage:"https://tt-farm.com/images/soybean.jpg"
+                },
+
+                products:{
+                    title:"商品ギャラリー｜T.Tファーム｜信州の農産物",
+                    description:"T.Tファームで生産・販売する農産物や商品の写真をご紹介します。",
+                    h1:"商品ギャラリー",
+                    h2:"T.Tファームの商品写真",
+                    text:"T.Tファームで育てた農産物や、お届けしている商品の写真をご紹介します。",
+                    ogImage:"https://tt-farm.com/images/product.jpg"
+                },
+
+                animals:{
+                    title:"農園で出会った生き物ギャラリー｜T.Tファーム",
+                    description:"長野県の農園や畑で出会った生き物を写真でご紹介します。",
+                    h1:"農園で出会った生き物",
+                    h2:"農園や畑で出会った生き物の写真",
+                    text:"農作業の途中で出会った、農園で暮らすさまざまな生き物をご紹介します。",
+                    ogImage:"https://tt-farm.com/images/frog.jpg"
+                },
+
+                machinery:{
+                    title:"農機具ギャラリー｜T.Tファーム｜農作業を支える機械",
+                    description:"T.Tファームの農作業で使用する農機具や機械を写真でご紹介します。",
+                    h1:"農機具ギャラリー",
+                    h2:"農作業を支える農機具の写真",
+                    text:"畑や田んぼでの農作業を支える農機具や機械、それらを使った作業の様子をご紹介します。",
+                    ogImage:"https://tt-farm.com/images/machine.jpg"
+                }
+            };
+            
+            function updateCategorySeo(category){
+                const seo = categorySeo[category];
+
+                if(!seo) return;
+
+                const categoryUrl =
+                `https://tt-farm.com/gallery.html?category=${encodeURIComponent(category)}`;
+
+                document.title = seo.title;
+
+                document.querySelector('meta[name="description"]')
+                .setAttribute("content", seo.description);
+
+                document.querySelector('link[rel="canonical"]')
+                .setAttribute("href", categoryUrl);
+
+                document.querySelector('meta[property="og:title"]')
+                .setAttribute("content", seo.title);
+
+                document.querySelector('meta[property="og:description"]')
+                .setAttribute("content", seo.description);
+
+                document.querySelector('meta[property="og:url"]')
+                .setAttribute("content", categoryUrl);
+
+                document.querySelector('meta[property="og:image"]')
+                .setAttribute("content", seo.ogImage);
+            }
+
+            function resetGallerySeo(){
+                document.title =
+                "ギャラリー｜T.Tファーム｜長野県・信州の農園写真";
+
+                document.querySelector('meta[name="description"]').setAttribute(
+                    "content",
+                    "T.Tファームのギャラリーです。長野県・信州で育てるぶどう、原木しいたけ、米、もも、山菜、小菊、ひまわり、小麦、大豆の写真や農園で出会った生き物をご紹介します。"
+                );
+
+                document.querySelector('link[rel="canonical"]')
+                .setAttribute("href", "https://tt-farm.com/gallery.html");
+
+                document.querySelector('meta[property="og:title"]')
+                .setAttribute("content", "ギャラリー｜T.Tファーム");
+
+                document.querySelector('meta[property="og:description"]').setAttribute(
+                    "content",
+                    "ぶどう、原木しいたけ、米、もも、山菜、小菊、ひまわり、小麦、大豆の栽培風景や、農園で出会った生き物をご紹介します。"
+                );
+
+                document.querySelector('meta[property="og:url"]')
+                .setAttribute("content", "https://tt-farm.com/gallery.html");
+
+                document.querySelector('meta[property="og:image"]')
+                .setAttribute("content", "https://tt-farm.com/images/shiitake.jpg");
+            }
+
             const params = new URLSearchParams(window.location.search);
             const initialCategory = params.get("category");
 
@@ -534,7 +729,11 @@
             function showCategoryTop(){
                 const gallery = document.getElementById("gallery");
                 const title = document.querySelector(".page-title");
+                const description = document.getElementById("gallery-description");
+                resetGallerySeo();
                 title.textContent = "ギャラリー";
+                description.textContent = "T.Tファームで育てている作物や、農園で出会った生き物、信州の自然を写真でご紹介します。気になるカテゴリーを選んでご覧ください。";
+                history.replaceState({},"","gallery.html");
                 gallery.innerHTML = "";
                 
                 const sortedCategories=
@@ -571,72 +770,148 @@
             }
 
             function showGallery(category){
+                const seo = categorySeo[category];
+
+                if(!seo){
+                    showCategoryTop();
+                    return;
+                }
+
                 const gallery = document.getElementById("gallery");
                 const title = document.querySelector(".page-title");
-                title.textContent = categoryNames[category];
-                const hasDiary = diaryCategories.includes(categoryNames[category]);
-                gallery.innerHTML = `                  
-                    <div style="grid-column:1/-1;text-align:center;margin-bottom:20px;">
-                        <button class="back-button" onclick="showCategoryTop()">← ギャラリー 一覧へ戻る</button>
-                        ${
-                            hasDiary
-                            ? `
-                            <br><br>
-                            <a class="diary-link" href="diary.html?category=${encodeURIComponent(categoryNames[category])}">
-                                📖 この作物の農園日記を見る
-                            </a>
-                            `
-                            : ""
-                        }
-                        
+                const description =
+                    document.getElementById("gallery-description");
+
+                updateCategorySeo(category);
+
+                title.textContent = seo.h1;
+                description.textContent = seo.text;
+
+                history.pushState(
+                    {},
+                    "",
+                    `gallery.html?category=${encodeURIComponent(category)}`
+                );
+
+                const diaryCategory =
+                    category === "shiitake"
+                    ? "しいたけ"
+                    : categoryNames[category];
+
+                const hasDiary =
+                diaryCategories.includes(diaryCategory);
+
+                gallery.innerHTML = `
+                    <div class="gallery-heading">
+                    <h2>${seo.h2}</h2>
+
+                    <button class="back-button"
+                        onclick="showCategoryTop()">
+                        ← ギャラリー一覧へ戻る
+                    </button>
+
+                    ${
+                    hasDiary
+                        ? `
+                        <a class="diary-link"
+                           href="diary.html?category=${encodeURIComponent(diaryCategory)}">
+                            この作物の農園日記を見る
+                        </a>
+                    `
+                    : ""
+                    }
                     </div>
 
-                    <p style ="grid-column:1/-1;text-align:center;">
+                    <p class="gallery-loading">
                         読み込み中…
                     </p>
                 `;
-                
-                fetch(`${galleryApi}?mode=category&category=${category}`)
-                    .then(response => response.json())
-                    .then(photos => {    
-                        
-                        photos.sort((a,b) => {
-                            if (a.isCover && !b.isCover) return -1;
-                            if (!a.isCover && b.isCover) return 1;
-                            return a.name.localeCompare(b.name,"ja");
-                        });
-                
-                        gallery.innerHTML = `                  
-                            <div style="grid-column:1/-1;text-align:center;margin-bottom:20px;">
-                                <button class="back-button" onclick="showCategoryTop()">← ギャラリー 一覧へ戻る</button>
-                                ${
-                                    hasDiary
-                                    ? `
-                                        <br><br>
-                                        <a class="diary-link" href="diary.html?category=${encodeURIComponent(categoryNames[category])}">
-                                            📖 この作物の農園日記を見る
-                                        </a>
-                                    `
-                                    : ""
-                                }
-                            </div>
-                        `;                
 
-                    currentPhotos = photos;
+                fetch(`${galleryApi}?mode=category&category=${encodeURIComponent(category)}`)
+                .then(response => {
+                if(!response.ok){
+                    throw new Error("写真を取得できませんでした。");
+                }
 
-                    photos.forEach((photo,index) => {
-                        gallery.innerHTML += `
-                            <div class="photo-card">
-                                <img src="${photo.url}"
-                                 alt="${photo.name}"
-                                 onclick="openLightbox(${index})"
-                                 style="cursor:zoom-in;">
-                                <p>${photo.name}</p>
-                            </div>
-                        `;
+                return response.json();
+                })
+                .then(photos => {
+                    photos.sort((a,b) => {
+                    if(a.isCover && !b.isCover) return -1;
+                    if(!a.isCover && b.isCover) return 1;
+
+                    return a.name.localeCompare(b.name, "ja");
                     });
+
+                    currentPhotos = photos.map(photo => ({
+                    ...photo,
+                    alt:
+                    `${categoryNames[category]}|${photo.name}｜T.Tファーム`
+                }));
+
+                const photoHtml = currentPhotos.map((photo, index) => `
+                    <div class="photo-card">
+                        <img
+                            src="${photo.url}"
+                            alt="${photo.alt}"
+                            loading="lazy"
+                            onclick="openLightbox(${index})"
+                            style="cursor:zoom-in;"
+                        >
+                        <p>${photo.name}</p>
+                        </div>
+                    `).join("");
+
+                    gallery.innerHTML = `
+                        <div class="gallery-heading">
+                        <h2>${seo.h2}</h2>
+
+                        <button class="back-button"
+                            onclick="showCategoryTop()">
+                            ← ギャラリー一覧へ戻る
+                        </button>
+
+                        ${
+                            hasDiary
+                                ? `
+                                    <a class="diary-link"
+                                        href="diary.html?category=${encodeURIComponent(diaryCategory)}">
+                                        この作物の農園日記を見る
+                                    </a>
+                                `
+                            : ""
+                        }
+                    </div>
+
+                    ${
+                        photoHtml ||
+                        `<p class="gallery-loading">
+                            写真は現在準備中です。
+                        </p>`
+                    }
+                    `;
+                })
+                .catch(error => {
+                    gallery.innerHTML = `
+                        <div class="gallery-heading">
+                        <h2>${seo.h2}</h2>
+
+                        <button class="back-button"
+                            onclick="showCategoryTop()">
+                            ← ギャラリー一覧へ戻る
+                        </button>
+                        </div>
+
+                        <p class="gallery-loading">
+                        写真を読み込めませんでした。
+                        </p>
+                        `;
+
+                    console.error(error);
                 });
-            }             
+            }
+                
+                         
             
             function toggleMenu(){
                 const menu = document.getElementById("nav-menu");
@@ -661,7 +936,7 @@
                 const lightboxImg = document.getElementById("lightbox-img");
 
                 lightboxImg.src = photo.url;
-                lightboxImg.alt = photo.name;
+                lightboxImg.alt = photo.alt || photo.name;
 
                 document.getElementById("lightbox-caption").textContent =
                     photo.name + "　(" + (currentIndex+1) + " / " + currentPhotos.length + ")";

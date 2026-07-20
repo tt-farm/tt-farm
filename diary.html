@@ -157,6 +157,13 @@
                 font-size:16px;
             }
 
+            #category-heading{
+                color:#6d8f3f;
+                text-align:center;
+                margin:10px 0 30px;
+                font-size:28px;
+            }
+
             .diary-photos{
                 display:grid;
                 gap:15px;
@@ -361,7 +368,7 @@
     <main>
         <h1 class="page-title">農園日記</h1>
         
-        <p class="page-introduction">
+        <p class="page-introduction" id="page-introduction">
             T.Tファームで行っている農作業や、作物の成長、季節ごとの農園の様子を写真とともにご紹介します。
             作物や月を選んで、日々の記録をご覧ください。
         </p>
@@ -377,6 +384,7 @@
                 <select id="month-select"></select>
             </label>
         </div>
+        <h2 id="category-heading"></h2>
         <div id="diary-container"></div>
 
         <section class="section">
@@ -413,6 +421,91 @@
             "ひまわり":"ひまわり",
             "小麦":"小麦",
             "大豆":"大豆",    
+        };
+
+        const categorySeo = {
+
+            "ぶどう":{
+                title:"ぶどう農園日記｜T.Tファーム｜長野市のぶどう栽培記録",
+                description:"長野県長野市若穂保科・篠ノ井で育てるぶどうの農作業や成長記録を写真付きでご紹介します。",
+                h1:"ぶどう農園日記",
+                h2:"長野市で育てるぶどうの農作業記録",
+                text:"長野市若穂保科・篠ノ井で育てているぶどうの日々の農作業や成長を記録しています。",
+                ogImage:"https://tt-farm.com/images/grape.jpg"
+            },
+
+            "しいたけ":{
+                title:"原木しいたけ農園日記｜T.Tファーム｜上田市真田町",
+                description:"長野県上田市真田町で育てる原木しいたけの農作業や栽培記録を写真付きでご紹介します。",
+                h1:"原木しいたけ農園日記",
+                h2:"上田市真田町で育てる原木しいたけの農作業記録",
+                text:"上田市真田町で育てている原木しいたけの発生や管理、収穫の様子をご紹介します。",
+                ogImage:"https://tt-farm.com/images/shiitake.jpg"
+            },
+
+            "米":{
+                title:"米農園日記｜T.Tファーム｜長野市篠ノ井・須坂市",
+                description:"長野市篠ノ井・須坂市で育てる米の農作業や生育の様子を写真付きでご紹介します。",
+                h1:"米農園日記",
+                h2:"長野市篠ノ井・須坂市で育てる米の農作業記録",
+                text:"長野市篠ノ井・須坂市で育てている米の田植えから収穫までの様子を記録しています。",
+                ogImage:"https://tt-farm.com/images/rice.jpg"
+            },
+
+            "もも":{
+                title:"もも農園日記｜T.Tファーム｜長野市篠ノ井",
+                description:"長野市篠ノ井で育てるももの農作業や成長の様子を写真付きでご紹介します。",
+                h1:"もも農園日記",
+                h2:"長野市篠ノ井で育てるももの農作業記録",
+                text:"長野市篠ノ井で育てているももの栽培や季節ごとの農作業を記録しています。",
+                ogImage:"https://tt-farm.com/images/peach.jpg"
+            },
+
+            "山菜":{
+                title:"山菜農園日記｜T.Tファーム｜上田市菅平高原",
+                description:"上田市菅平高原で採れる山菜や自然の恵み、季節ごとの様子を写真付きでご紹介します。",
+                h1:"山菜農園日記",
+                h2:"上田市菅平高原の山菜採り記録",
+                text:"上田市菅平高原で採れる山菜や、四季折々の自然の様子を記録しています。",
+                ogImage:"https://tt-farm.com/images/sansai.jpg"
+            },
+
+            "小菊":{
+                title:"小菊農園日記｜T.Tファーム｜長野市篠ノ井",
+                description:"長野市篠ノ井で育てる小菊の農作業や開花の様子を写真付きでご紹介します。",
+                h1:"小菊農園日記",
+                h2:"長野市篠ノ井で育てる小菊の農作業記録",
+                text:"長野市篠ノ井で育てている小菊の栽培や開花までの様子を記録しています。",
+                ogImage:"https://tt-farm.com/images/chrysanthemum.jpg"
+            },
+
+            "ひまわり":{
+                title:"ひまわり農園日記｜T.Tファーム｜長野市篠ノ井",
+                description:"長野市篠ノ井で育てるひまわりの成長や開花の様子を写真付きでご紹介します。",
+                h1:"ひまわり農園日記",
+                h2:"長野市篠ノ井で育てるひまわりの農作業記録",
+                text:"長野市篠ノ井で育てているひまわりの成長や開花、農作業の様子を記録しています。",
+                ogImage:"https://tt-farm.com/images/sunflower.jpg"
+            },
+
+            "小麦":{
+                title:"小麦農園日記｜T.Tファーム｜長野市若穂・篠ノ井",
+                description:"長野市若穂・篠ノ井で育てる小麦の農作業や生育の様子を写真付きでご紹介します。",
+                h1:"小麦農園日記",
+                h2:"長野市若穂・篠ノ井で育てる小麦の農作業記録",
+                text:"長野市若穂・篠ノ井で育てている小麦の生育や収穫までの様子を記録しています。",
+                ogImage:"https://tt-farm.com/images/wheat.jpg"
+            },
+
+            "大豆":{
+                title:"大豆農園日記｜T.Tファーム｜長野市若穂・篠ノ井",
+                description:"長野市若穂・篠ノ井で育てる大豆の農作業や成長の様子を写真付きでご紹介します。",
+                h1:"大豆農園日記",
+                h2:"長野市若穂・篠ノ井で育てる大豆の農作業記録",
+                text:"長野市若穂・篠ノ井で育てている大豆の播種から収穫までの様子を記録しています。",
+                ogImage:"https://tt-farm.com/images/soybean.jpg"
+            }
+            
         };
 
         const categories = Object.keys(categoryLabels);
@@ -623,7 +716,77 @@
             return "";
         }
 
+        function updateDiarySeo(category){
+
+            if(category==="すべて"){
+                resetDiarySeo();
+                return;
+            }
+
+            const seo = categorySeo[category];
+
+            if(!seo) return;
+
+            document.title=seo.title;
+
+            document.querySelector(
+                'meta[name="description"]'
+            ).content=seo.description;
+
+            document.querySelector(
+                'meta[property="og:title"]'
+            ).content=seo.title;
+
+            document.querySelector(
+                'meta[property="og:description"]'
+            ).content=seo.description;
+
+            document.querySelector(
+                'meta[property="og:image"]'
+            ).content=seo.ogImage;
+
+            document.querySelector(
+                'meta[property="og:url"]'
+            ).content =
+            `https://tt-farm.com/diary.html?category=${encodeURIComponent(category)}`;
+
+            document.querySelector(
+                "link[rel='canonical']"
+            ).href=
+            `https://tt-farm.com/diary.html?category=${encodeURIComponent(category)}`;
+
+            document.querySelector(
+                ".page-title"
+            ).textContent=seo.h1;
+
+            document.getElementById(
+                "page-introduction"
+            ).textContent=seo.text;
+
+            history.pushState(
+                {},
+                "",
+                `diary.html?category=${encodeURIComponent(category)}`
+            );
+        }
+        
         function showDiary(){
+            const heading = document.getElementById("category-heading");
+            if(
+                selectedCategory === "すべて" ||
+                !categorySeo[selectedCategory]
+            ){
+                heading.textContent = "";
+            }else{
+                heading.textContent = categorySeo[selectedCategory].h2;
+            }
+
+            if(selectedCategory==="すべて"){
+                resetDiarySeo();
+            }else{
+                updateDiarySeo(selectedCategory);
+            }
+
             updateSelectOptions();
             const container = document.getElementById("diary-container");
             container.innerHTML = "";
@@ -671,7 +834,9 @@
 
                         <p><strong>${item.date}</strong></p>
                         <p>${item.category === "しいたけ" ? "原木しいたけ" : item.category}</p>
-                        <h2>${item.title}</h2>
+                        <h2>
+                            ${categoryLabels[item.category]}｜${item.title}
+                        </h2>
                         <p class="diary-text">${item.text}</p>
                     </section>
                 `;
@@ -723,6 +888,51 @@
 
             document.getElementById("lightbox").classList.remove("open");
 
+        }
+
+        function resetDiarySeo(){
+            document.title="農園日記｜T.Tファーム｜長野県・信州の農作業と栽培記録";
+            document.querySelector(
+                'meta[name="description"]'
+            ).content =
+            "T.Tファームの農園日記です。長野県・信州で育てるぶどう、原木しいたけ、米、もも、山菜、小菊、ひまわり、小麦、大豆の農作業や成長の様子、農園の日々を写真とともにご紹介します。";
+
+            document.querySelector(
+                "link[rel='canonical']"
+            ).href =
+            "https://tt-farm.com/diary.html";
+
+            document.querySelector(
+                'meta[property="og:title"]'
+            ).content =
+            "農園日記｜T.Tファーム";
+
+            document.querySelector(
+                'meta[property="og:description"]'
+            ).content =
+            "長野県・信州で育てるぶどう、原木しいたけ、米、もも、山菜などの農作業や成長の様子を、写真とともにお届けします。";
+
+            document.querySelector(
+                'meta[property="og:image"]'
+            ).content =
+            "https://tt-farm.com/images/frog.jpg";
+
+            document.querySelector(
+                'meta[property="og:url"]'
+            ).content =
+            "https://tt-farm.com/diary.html";
+            
+            document.querySelector(
+                ".page-title"
+            ).textContent =
+            "農園日記";
+
+            document.getElementById(
+                "page-introduction"
+            ).textContent =
+            "T.Tファームで行っている農作業や、作物の成長、季節ごとの農園の様子を写真とともにご紹介します。作物や月を選んで、日々の記録をご覧ください。";
+
+            history.replaceState({}, "", "diary.html");
         }
 
     </script>
