@@ -12,13 +12,14 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
         
         <!-- OGP -->
         <meta property="og:type" content="website">
         <meta property="og:site_name" content="T.Tファーム">
         <meta property="og:title" content="T.Tファーム｜長野県・信州の農園">
         <meta property="og:description"
-        content="ぶどう、原木しいたけ、米、もも、山菜、小菊、ひまわり、小麦、大豆などを育てるT.Tファーム。農園日記や生き物の写真を通して、農業と自然の魅力を発信しています。">
+        content="ぶどう、原木しいたけ、小麦、大豆、米、もも、山菜、小菊、ひまわりなどを育てるT.Tファーム。農園日記や生き物の写真を通して、農業と自然の魅力を発信しています。">
         <meta property="og:url" content="https://tt-farm.com/">
         <meta property="og:image" content="https://tt-farm.com/images/main.jpg">
         <meta property="og:image:alt" content="T.Tファームの作物と農園の風景">
@@ -32,105 +33,13 @@
         <meta name="twitter:image" content="https://tt-farm.com/images/main.jpg">
 
         <style>
-            body{
-                margin:0;
-                font-family:"Yu Gothic","Hiragino Sans",sans-serif;
-                background:#fffaf0;
-                color:#3e2f24
-            }
 
-            header{
-                background:#f6d77a;
-                color:#4e342e;
-                text-align:center;
-                padding:22px;
-            }
-
-            header h1{
-                margin:0;
-                font-size:42px;
-            }
-            
-            .logo-tt{
-                font-family:'Great Vibes',cursive;
-                margin-right:10px;
-            }
-
-            .logo-ja{
-                font-family:"Yu Gothic","Hiragino Sans",sans-serif;
-                font-weight:bold;
-            }
-             
-            header p{
-                margin:8px 0 0;
-                font-size:18px;
-            }
-
-            .menu-button{
-                display:none;
-                position:fixed;
-                top:30px;
-                left:15px;
-                z-index:1001;
-                background:#33691E;
-                color:white;
-                border:none;
-                font-size:28px;
-                padding:8px 14px;
-                cursor:pointer;
-                border-radius:6px;
-            }
-
-            nav{
-                background:#33691E;
-                display:flex;
-                justify-content:center;
-                flex-wrap:wrap;
-            }
-
-            nav a{
-                color:white;
-                text-decoration:none;
-                padding:12px 20px;
-                font-weight:bold;
-                border-right:1px solid
-                rgba(255,255,255,0.25);
-            }
-            nav a:hover{
-                background:#558B2F;
-            }
-
-            @media(max-width:768px){
-
-                .menu-button{
-                    display:block;
-                }
-
-                nav{
-                    position:fixed;
-                    top:0;
-                    left:-260px;
-                    width:240px;
-                    height:100vh;
-                    background:#33691E;
-                    display:flex;
-                    flex-direction:column;
-                    justify-content:flex-start;
-                    padding-top:70px;
-                    transition:0.3s;
-                    z-index:1000;
-                }
-
-                nav.open{
-                    left:0;
-                }
-
-                nav a{
-                    border-right:none;
-                    border-bottom:1px solid rgba(255,255,255,0.25);
-                    text-align:left;
-                    padding:16px 20px;
-                }
+            .home-logo{
+                display:block;
+                width:240px;
+                max-width:70vw;
+                height:auto;
+                margin:0 auto;
             }
 
             .hero{
@@ -141,6 +50,28 @@
                 display:block;
                 width:100%;
                 height:auto;
+            }
+
+            .message-with-line-art{
+                position:relative;
+                overflow:hidden;
+            }
+
+            .message-content{
+                position:relative;
+                z-index:2;
+            }
+
+            .message-decoration{
+                position:absolute;
+                inset:0;
+                width:100%;
+                height:100%;
+                object-fit:cover;
+                object-position:center;
+                opacity:0.08;
+                pointer-events:none;
+                z-index:1;
             }
     
             .message{
@@ -154,14 +85,23 @@
             }
 
             .message h2{
+                position:relative;
+                z-index:2;
                 color:#6d8f3f;
                 font-size:34px;
             }
 
             .message p{
+                position:relative;
+                z-index:2;
                 font-size:18px;
                 line-height:2;
                 text-align:left;
+            }
+
+            .message .main-link{
+                position:relative;
+                z-index:2;
             }
 
             .main-link{
@@ -177,6 +117,19 @@
 
             .main-link:hover{
                 background:#33691E;
+            }
+
+            .farm-collage{
+                max-width:700px;
+                margin:45px auto;
+                padding:0 20px;
+            }
+
+            .farm-collage img{
+                display:block;
+                width:100%;
+                height:auto;
+                border-radius:12px;
             }
 
             .home-section{
@@ -246,40 +199,46 @@
             }
 
             @media(max-width:600px){
+                .home-logo{
+                    width:180px;
+                }
+                
                 .cards{
                     grid-template-columns:1fr;
                 }
-            }
 
-            footer{
-                background:#6d8f3f;
-                color:white;
-                text-align:center;
-                padding:20px;
             }
-
-            footer a{
-                color:white;
-            }
-
+            
             @media(max-width:768px){
-                header h1{
-                    font-size:30px;
+               
+                .message-decoration{
+                    width:100%;
+                    height:auto;
+                    min-height:100%;
+                    object-fit:cover;
+                    object-position:center top;
+                    opacity:0.08;
                 }
                 
-                nav a{
-                    width:100%;
-                    text-align:center;
-                    border-bottom:1px solid
-                    rgba(255,255,255,0.2);
+                .message p,
+                .message .main-link{
+                    position:relative;
+                    z-index:2;
                 }
-
+                
                 .message{
                     margin:25px 15px;
+                    padding:30px 28px;
                 }
 
                 .message h2{
                     font-size:26px;
+                }
+
+                .farm-collage{
+                    max-width:100%;
+                    margin:30px auto;
+                    padding:0 15px;
                 }
             }
         </style>
@@ -299,7 +258,7 @@
                 "name": "T.Tファーム",
                 "alternateName": "T.T Farm",
 
-                "description": "長野県で、ぶどう、原木しいたけ、米、もも、山菜、小麦、大豆、小菊、ひまわりなどを生産・販売する営農生産組合です。信州の豊かな自然の中で育てた農産物を全国へお届けするとともに、農業の魅力を伝える情報発信にも取り組んでいます。",
+                "description": "長野県で、ぶどう、原木しいたけ、小麦、大豆、米、もも、山菜、小菊、ひまわりなどを生産・販売する営農生産組合です。信州の豊かな自然の中で育てた農産物を全国へお届けするとともに、農業の魅力を伝える情報発信にも取り組んでいます。",
 
                 "url": "https://tt-farm.com/",
 
@@ -361,10 +320,9 @@
 
     <body>
 
-        <header>
+        <header class="home-header">
             <h1>
-                <span class="logo-tt">T.T</span>
-                <span class="logo-ja">ファーム</span>
+                <img class="home-logo" src="images/logo.png" alt="T.Tファーム">
             </h1>
             <p>信州から農業の価値を未来へ</p>
         </header>
@@ -380,7 +338,7 @@
             <a href="diary.html">農園日記</a>
             <a href="quiz.html">クイズ</a>
             <a href="event.html">イベント</a>
-            <a href="https://ttfarm.theshop.jp" target="_blank">購入（外部サイト）</a>
+            <a href="https://ttfarm.theshop.jp" target="_blank" rel="noopener noreferrer">購入（外部サイト）</a>
             <a href="contact.html">お問い合わせ</a>
         </nav>
 
@@ -388,14 +346,16 @@
             <img src="images/main.jpg" alt="長野県・信州で農産物を育てるT.Tファーム">
         </section>
 
-        <section class="message">
-            <h2>育てる楽しさ
-                食べる喜び
-                自然のおもしろさを。</h2>
+        <section class="message message-with-line-art">
+            <div class="message-content">
+            <h2>育てる楽しさ<br>
+                食べる喜び<br>
+                自然のおもしろさを。
+            </h2>
 
             <p>
                 T.Tファームは、長野県・信州の自然の中で、
-                ぶどう、原木しいたけ、米、もも、山菜、小菊、ひまわり、小麦、大豆など、
+                ぶどう、原木しいたけ、小麦、大豆、米、もも、山菜、小菊、ひまわりなど、
                 季節ごとのさまざまな作物を育てる農園です。
             </p>
 
@@ -406,6 +366,12 @@
             </p>
 
             <a class="main-link" href="about.html">T.Tファームについて詳しく見る</a>
+            </div>
+            <img class="message-decoration" src="images/line-art.png" alt="" aria-hidden="true">
+        </section>
+
+        <section class="farm-collage">
+            <img src="images/collage.png" alt="T.Tファームの農園風景">
         </section>
 
         <section class="home-section">
@@ -429,6 +395,24 @@
                     </p>
                 </a>
 
+                <a class="card link-card" href="gallery.html?category=wheat">
+                    <img src="images/wheat.jpg" alt="長野県・信州の畑で育つ小麦">
+                    <h3>小麦</h3>
+                    <p>
+                        種まきから成長、収穫まで、
+                        季節とともに変わる小麦畑の様子をお届けします。
+                    </p>
+                </a>
+
+                <a class="card link-card" href="gallery.html?category=soybean">
+                    <img src="images/soybean.jpg" alt="長野県・信州で育てるT.Tファームの大豆">
+                    <h3>大豆</h3>
+                    <p>
+                        信州の自然の中で育てる大豆。
+                        種まきから成長、収穫までの様子を紹介します。
+                    </p>
+                </a>
+
                 <a class="card link-card" href="gallery.html?category=rice">
                     <img src="images/rice.jpg" alt="長野県・信州で育てるT.Tファームの米">
                     <h3>米</h3>
@@ -442,7 +426,7 @@
                     <img src="images/peach.jpg" alt="長野県・信州で育てるT.Tファームのもも">
                     <h3>もも</h3>
                     <p>
-                        信州の豊かな自然の中で育つもも。
+                        なつっこ（白桃）、黄金桃（黄桃）を育てています。
                         花から実が色づき、収穫を迎えるまでの様子を紹介します。
                     </p>
                 </a>
@@ -460,8 +444,8 @@
                     <img src="images/chrysanthemum.jpg" alt="長野県・信州で育てるT.Tファームの小菊">
                     <h3>小菊</h3>
                     <p>
-                        信州の自然の中で育てる小菊。
-                        植え付けから開花、収穫までの様子を紹介しています。
+                        赤魚（赤）、やよい（赤）、ふなじ（黄）、さざ波（白）などを育てています。
+                        植え付けから開花、収穫までの様子を紹介します。
                     </p>
                 </a>
 
@@ -469,19 +453,11 @@
                     <img src="images/sunflower.jpg" alt="長野県・信州で育てるT.Tファームのひまわり">
                     <h3>ひまわり</h3>
                     <p>
-                        夏の青空に咲くひまわり。
-                        成長の様子や、一面に広がる美しい花の風景を紹介します。
+                        サンリッチオレンジ、サンリッチレモンを育てています。
+                        成長の様子や、夏の畑を彩る花の風景を紹介します。
                     </p>
                 </a>
 
-                <a class="card link-card" href="gallery.html?category=wheat">
-                    <img src="images/wheat.jpg" alt="長野県・信州の畑で育つ小麦">
-                    <h3>小麦</h3>
-                    <p>
-                        種まきから成長、収穫まで、
-                        季節とともに変わる小麦畑の様子をお届けします。
-                    </p>
-                </a>
             </div>
 
         </section>
@@ -515,10 +491,11 @@
                 </a>
 
                 <a class="card link-card" href="https://ttfarm.theshop.jp" target="_blank" rel="noopener noreferrer">
-                    <h3>農産物を購入する</h3>
+                    <h3>信州の農産物を購入する</h3>
                     <p>
-                        T.Tファームの季節の農産物を、
-                        オンラインショップからご覧いただけます。
+                        T.Tファームで育てた長野県産・信州産の季節の農産物を、
+                        オンラインショップから産地直送でお届けします。
+                        通販・お取り寄せはこちらからご覧いただけます。
                     </p>
                 </a>
             </div>
@@ -547,13 +524,7 @@
             <p>© T.Tファーム</p>
         </footer>
        
-        <script>
-            function toggleMenu(){
-                const menu =
-                document.getElementById("nav-menu");
-                menu.classList.toggle("open");
-            }
-        </script>
+        <script src="js/common.js"></script>
 
     </body>
 </html>

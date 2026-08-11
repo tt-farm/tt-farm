@@ -10,203 +10,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
         
-        <style>
-            body{
-                margin:0;
-                font-family:"Yu Gothic","Hiragino Sans",sans-serif;
-                background:#fffaf0;
-                color:#333;
-            }
-
-            header{
-                background:#f6d77a;
-                color:#4e342e;
-                text-align:center;
-                padding:22px;
-            }
-
-            .site-logo{
-                margin:0;
-                font-size:42px;
-            }
-            
-            .logo-tt{
-                font-family:'Great Vibes',cursive;
-                margin-right:10px;
-            }
-
-            .logo-ja{
-                font-family:"Yu Gothic","Hiragino Sans",sans-serif;
-                font-weight:bold;
-            }
-
-            header p{
-                margin:8px 0 0;
-                font-size:18px;
-            }
-
-            .menu-button{
-                display:none;
-                position:fixed;
-                top:30px;
-                left:15px;
-                z-index:1001;
-                background:#33691E;
-                color:white;
-                border:none;
-                font-size:28px;
-                padding:8px 14px;
-                cursor:pointer;
-                border-radius:6px;
-            }
-
-            nav{
-                background:#33691E;
-                display:flex;
-                justify-content:center;
-                flex-wrap:wrap;
-            }
-
-            nav a{
-                color:white;
-                text-decoration:none;
-                padding:12px 20px;
-                font-weight:bold;
-                border-right:1px solid
-                rgba(255,255,255,0.25);
-            }
-            nav a:hover{
-                background:#558B2F;
-            }
-
-            .site-logo{
-                margin:0;
-                font-size:42px;
-            }
-
-            .page-title{
-                text-align:center;
-                color:#33691E;
-                margin-bottom:30px;
-            }
-
-            .about-links{
-                display:flex;
-                justify-content:center;
-                flex-wrap:wrap;
-                gap:15px;
-                margin-top:20px;
-            }
-
-            .about-links a{
-                display:inline-block;
-                background:#6d8f3f;
-                color:white;
-                text-decoration:none;
-                padding:12px 24px;
-                border-radius:8px;
-                font-weight:bold;
-            }
-
-            .about-links a:hover{
-                background:#33691E;
-            }
-
-            footer a{
-                color:white;
-            }
-
-            @media(max-width:768px){
-
-                .menu-button{
-                    display:block;
-                }
-
-                nav{
-                    position:fixed;
-                    top:0;
-                    left:-260px;
-                    width:240px;
-                    height:100vh;
-                    background:#33691E;
-                    display:flex;
-                    flex-direction:column;
-                    justify-content:flex-start;
-                    padding-top:70px;
-                    transition:0.3s;
-                    z-index:1000;
-                }
-               
-                nav.open{
-                    left:0;
-                }
-
-                nav a{
-                    border-right:none;
-                    border-bottom:1px solid rgba(255,255,255,0.25);
-                    text-align:left;
-                    padding:16px 20px;
-                }
-            }
-            main{
-                max-width:1100px;
-                margin:40px auto;
-                padding:20px;
-            }
+        <link rel="stylesheet" href="css/style.css">
         
-            h2{
-                color:#6d8f3f;
-            }
-        
-            .section{
-                background:white;
-                padding:30px;
-                margin-bottom:30px;
-                border-radius:12px;
-                box-shadow:0 4px 10px rgba(0,0,0,0.1);
-            }
-
-            .section h2{
-                color:#6d8f3f;
-            }
-
-            .section ul{
-                line-height:2;
-            }
-
-            footer{
-                background:#6d8f3f;
-                color:white;
-                text-align:center;
-                padding:20px;
-            }
-
-            @media(max-width:768px){
-                header h1{
-                    font-size:30px;
-                }
-                
-                nav a{
-                    width:100%;
-                    text-align:center;
-                    border-bottom:1px solid
-                    rgba(255,255,255,0.2);
-                }
-
-                .hero{
-                    height:360px;
-                }
-
-                .message{
-                    margin:25px 15px;
-                }
-
-                .message h2{
-                    font-size:26px;
-                }
-            }
-
-        </style>
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-S2LG05GGPD"></script>
         <script>
@@ -214,12 +19,32 @@
             function gtag(){dataLayer.push(arguments);}gtag('js',new Date());
             gtag('config', 'G-S2LG05GGPD');
         </script>
+        <script type="application/ld+json">
+            {
+                "@context":"https://schema.org",
+                "@type":"BreadcrumbList",
+                "itemListElement":[
+                    {
+                        "@type":"ListItem",
+                        "position":1,
+                        "name":"ホーム",
+                        "item":"https://tt-farm.com/"
+                    },
+                    {
+                        "@type":"ListItem",
+                        "position":2,
+                        "name":"イベント",
+                        "item":"https://tt-farm.com/event.html"
+                    }
+                ]
+            }
+        </script>
     </head>
    
     <body>
 
         <header>
-            <div=class="site-logo">
+            <div class="site-logo">
                 <span class="logo-tt">T.T</span>
                 <span class="logo-ja">ファーム</span>
             </div>
@@ -237,13 +62,19 @@
             <a href="diary.html">農園日記</a>
             <a href="quiz.html">クイズ</a>
             <a href="event.html">イベント</a>
-            <a href="https://ttfarm.theshop.jp" target="_blank">購入（外部サイト）</a>
+            <a href="https://ttfarm.theshop.jp" target="_blank" rel="noopener noreferrer">購入（外部サイト）</a>
             <a href="contact.html">お問い合わせ</a>
         </nav>
 
         <main>
+        
+        <nav class="breadcrumb" aria-label="パンくずリスト">
+            <a href="index.html">ホーム</a>
+            <span>></span>
+            <span>イベント</span>
+        </nav>
 
-        <h1 class="page-title">イベント情報</h1>
+        <section class="section">
             <h2>準備中</h2>
             <p>
                 現在準備中です。
@@ -259,8 +90,7 @@
                 <a href="about.html">農園紹介を見る</a>
                 <a href="gallery.html">ギャラリーを見る</a>
                 <a href="diary.html">農園日記を読む</a>
-                <a href="contact.html">お問い合わせ</a>
-            </div>
+                <a href="https://ttfarm.theshop.jp" target="_blank" rel="noopener noreferrer">オンラインショップ</a>
         </section>
         </main>
 
@@ -268,20 +98,13 @@
              <p>
                 <a href="https://lin.ee/XFZeWaB">LINE</a> |
                 <a href="https://youtube.com/channel/UCWCrfZPdQvZXiJXD6ffQQnA?si=4Xva8m6RVkRZvQrc">YouTube</a> |
-                <a href="https://ttfarm.theshop.jp">オンラインショップ</a> ｜
+                <a href="https://ttfarm.theshop.jp" target="_blank" rel="noopener noreferrer">オンラインショップ</a> ｜
                 <a href="contact.html">お問い合わせ</a>
             </p>
 
             <p>© T.Tファーム</p>
         </footer>
 
-        <script>
-            function toggleMenu(){
-                const menu =
-                document.getElementById("nav-menu");
-                menu.classList.toggle("open");
-            }
-        </script>
-
+        <script src="js/common.js"></script>
     </body>
 </html>

@@ -6,17 +6,18 @@
         content="width=device-width, initial-scale=1.0">
         <title>ギャラリー｜T.Tファーム｜長野県・信州の農園写真</title>
         
-        <meta name="description" content="T.Tファームのギャラリーです。長野県・信州で育てるぶどう、原木しいたけ、米、もも、山菜、小菊、ひまわり、小麦、大豆の写真や農園で出会った生き物をご紹介します。">
+        <meta name="description" content="T.Tファームのギャラリーです。長野県・信州で育てるぶどう、原木しいたけ、小麦、大豆、米、もも、山菜、小菊、ひまわりの写真や農園で出会った生き物をご紹介します。">
         
         <link rel="canonical" href="https://tt-farm.com/gallery.html">
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
         
         <meta property="og:title" content="ギャラリー｜T.Tファーム">
         
-        <meta property="og:description" content="ぶどう、原木しいたけ、米、もも、山菜、小菊、ひまわり、小麦、大豆の栽培風景や、農園で出会った生き物をご紹介します。">
+        <meta property="og:description" content="ぶどう、原木しいたけ、小麦、大豆、米、もも、山菜、小菊、ひまわりの栽培風景や、農園で出会った生き物をご紹介します。">
         
         <meta property="og:url" content="https://tt-farm.com/gallery.html">
         
@@ -31,74 +32,7 @@
         <meta name="twitter:card" content="summary_large_image">
 
         <style>
-            body{
-                margin:0;
-                font-family:"Yu Gothic","Hiragino Sans",sans-serif;
-                background:#fffaf0;
-                color:#333;
-            }
-
-            header{
-                background:#f6d77a;
-                color:#4e342e;
-                text-align:center;
-                padding:22px;
-            }
-
-            .site-logo{
-                margin:0;
-                font-size:42px;
-            }
             
-            .logo-tt{
-                font-family:'Great Vibes', 'Brush Script MT',cursive;
-                margin-right:10px;
-            }
-
-            .logo-ja{
-                font-family:"Yu Gothic","Hiragino Sans",sans-serif;
-                font-weight:bold;
-            }
-
-            header p{
-                margin:8px 0 0;
-                font-size:18px;
-            }
-
-            .menu-button{
-                display:none;
-                position:fixed;
-                top:30px;
-                left:15px;
-                z-index:1001;
-                background:#33691E;
-                color:white;
-                border:none;
-                font-size:28px;
-                padding:8px 14px;
-                cursor:pointer;
-                border-radius:6px;
-            }
-
-            nav{
-                background:#33691E;
-                display:flex;
-                justify-content:center;
-                flex-wrap:wrap;
-            }
-
-            nav a{
-                color:white;
-                text-decoration:none;
-                padding:12px 20px;
-                font-weight:bold;
-                border-right:1px solid
-                rgba(255,255,255,0.25);
-            }
-            nav a:hover{
-                background:#558B2F;
-            }
-               
             main{
                 max-width:1200px;
                 margin:40px auto;
@@ -140,10 +74,6 @@
                 margin-bottom:40px;
             }
 
-            .category-card{
-                cursor:pointer;
-            }
-
             .category-card:hover{
                 transform:translateY(-4px);
                 transition:0.3s
@@ -176,6 +106,12 @@
                 background:#33691E;
             }
 
+            .category-card{
+                cursor:pointer;
+                text-decoration:none;
+                color:inherit;
+            }
+
             .empty-card{
                 display:flex;
                 justify-content:center;
@@ -186,6 +122,7 @@
             }
 
             .category-only{
+                display:block;
                 width:80%;
                 padding:18px;
                 background:#6d8f3f;
@@ -194,6 +131,8 @@
                 border-radius:10px;
                 font-size:20px;
                 font-weight:bold;
+                text-align:center;
+                text-decoration:none;
             }
 
             .category-only:hover{
@@ -220,55 +159,7 @@
                 font-weight:bold;
                 margin:14px;
             }
-
-            .about-links{
-                display:flex;
-                justify-content:center;
-                flex-wrap:wrap;
-                gap:15px;
-                margin-top:30px;
-            }
-
-            .about-links a{
-                display:inline-block;
-                background:#6d8f3f;
-                color:white;
-                text-decoration:none;
-                padding:12px 24px;
-                border-radius:8px;
-                font-weight:bold;
-                transition:0.3s;
-            }
-
-            .about-links a:hover{
-                background:#33691E;
-            }
-
-            .section{
-                background:white;
-                padding:40px 30px;
-                margin-bottom:30px;
-                border-radius:12px;
-                box-shadow:0 4px 10px rgba(0,0,0,0.1)
-            }
-
-            .section h2{
-                color:#6d8f3f;
-                margin-top:0;
-            }
-        
-            footer{
-                background:#33691E;
-                color:white;
-                text-align:center;
-                padding:20px;
-                margin-top:50px;
-            }
-
-            footer a{
-                color:white;
-            }
-
+           
             @media(max-width:900px){
                 .gallery{
                     grid-template-columns:repeat(2,1fr);
@@ -280,58 +171,6 @@
             @media(max-width:600px){
                 .gallery{
                     grid-template-columns:1fr;
-                }
-            }
-
-            @media(max-width:768px){
-
-                .menu-button{
-                    display:block;
-                }
-
-                nav{
-                    position:fixed;
-                    top:0;
-                    left:-260px;
-                    width:240px;
-                    height:100vh;
-                    background:#33691E;
-                    display:flex;
-                    flex-direction:column;
-                    justify-content:flex-start;
-                    padding-top:70px;
-                    transition:0.3s;
-                    z-index:1000;
-                }
-               
-                nav.open{
-                    left:0;
-                }
-
-                nav a{
-                    border-right:none;
-                    border-bottom:1px solid rgba(255,255,255,0.25);
-                    text-align:left;
-                    padding:16px 20px;
-                }
-            }
-
-            @media(max-width:768px){
-                .site-logo{
-                    font-size:30px;
-                }
-            }
-
-            @media(max-width:600px){
-                .about-links{
-                    flex-direction:column;
-                    align-items:center;
-                }
-
-                .about-links a{
-                    width:90%;
-                    max-width:320px;
-                    text-align:center;
                 }
             }
             
@@ -432,6 +271,28 @@
             function gtag(){dataLayer.push(arguments);}gtag('js',new Date());
             gtag('config', 'G-S2LG05GGPD');
         </script>
+
+        <script id="breadcrumb-json" type="application/ld+json">
+            {
+                "@context":"https://schema.org",
+                "@type":"BreadcrumbList",
+                "itemListElement":[
+                    {
+                        "@type":"ListItem",
+                        "position":1,
+                        "name":"ホーム",
+                        "item":"https://tt-farm.com/"
+                    },
+                    {
+                        "@type":"ListItem",
+                        "position":2,
+                        "name":"ギャラリー",
+                        "item":"https://tt-farm.com/gallery.html"
+                    }
+
+                ]
+            }
+        </script>
     </head>
 
     <body>
@@ -460,6 +321,17 @@
         </nav>
 
         <main>
+            <nav class="breadcrumb" aria-label="パンくずリスト" id="breadcrumb">
+                <a href="index.html">ホーム</a>
+                <span>></span>
+                <a href="gallery.html">ギャラリー</a>
+                <span id="breadcrumb-category-wrap" style="display:none;">
+                    <span>></span>
+                    <span id="breadcrumb-category"></span>
+                </span>
+            </nav>
+
+
             
             <h1 class="page-title">ギャラリー</h1>
 
@@ -487,7 +359,7 @@
             <p>
                 <a href="https://lin.ee/XFZeWaB">LINE</a> |
                 <a href="https://youtube.com/channel/UCWCrfZPdQvZXiJXD6ffQQnA?si=4Xva8m6RVkRZvQrc">YouTube</a> |
-                <a href="https://ttfarm.theshop.jp">オンラインショップ</a> ｜
+                <a href="https://ttfarm.theshop.jp" target="_blank" rel="noopener noreferrer">オンラインショップ</a> ｜
                 <a href="contact.html">お問い合わせ</a>
             </p>
 
@@ -532,10 +404,10 @@
             const categorySeo = {
                 grape:{
                     title:"ぶどうギャラリー｜T.Tファーム｜長野市のぶどう栽培写真",
-                    description:"長野県長野市若穂保科・篠ノ井で育てるぶどうの栽培風景や成長の様子を、写真でご紹介します。",
+                    description:"長野県長野市若穂保科・篠ノ井で育てるクイーンルージュ®、シャインマスカット、ナガノパープル、クイーンニーナ、ふじのかがやきなどのぶどうの栽培風景や成長の様子を写真でご紹介します。",
                     h1:"ぶどうギャラリー",
                     h2:"長野市で育てるぶどうの写真",
-                    text:"長野市若穂保科・篠ノ井で育てているぶどうの栽培風景や、季節ごとの成長の様子をご紹介します。",
+                    text:"長野市若穂保科・篠ノ井でクイーンルージュ®、シャインマスカット、ナガノパープル、クイーンニーナ、ふじのかがやきなどのぶどうを育てています。季節ごとの成長や農作業の様子をご紹介します。",
                     ogImage:"https://tt-farm.com/images/grape.jpg"
                 },
 
@@ -547,52 +419,7 @@
                     text:"上田市真田町で育てている原木しいたけの発生や収穫、管理などの様子をご紹介します。",
                     ogImage:"https://tt-farm.com/images/shiitake.jpg"
                 },
-
-                rice:{
-                    title:"米ギャラリー｜T.Tファーム｜長野市篠ノ井・須坂市",
-                    description:"長野市篠ノ井・須坂市で育てる米の栽培風景や成長の様子を、写真でご紹介します。",
-                    h1:"米ギャラリー",
-                    h2:"長野市篠ノ井・須坂市で育てる米の写真",
-                    text:"長野市篠ノ井・須坂市で育てている米の、田植えから生育、稲刈りまでの様子をご紹介します。",
-                    ogImage:"https://tt-farm.com/images/rice.jpg"
-                },
-
-                peach:{
-                    title:"ももギャラリー｜T.Tファーム｜長野市篠ノ井",
-                    description:"長野市篠ノ井で育てるももの栽培風景や成長の様子を、写真でご紹介します。",
-                    h1:"ももギャラリー",
-                    h2:"長野市篠ノ井で育てるももの写真",
-                    text:"長野市篠ノ井で育てているももの花や実の成長、農作業の様子をご紹介します。",
-                    ogImage:"https://tt-farm.com/images/peach.jpg"
-                },
-
-                sansai:{
-                    title:"山菜ギャラリー｜T.Tファーム｜上田市菅平高原",
-                    description:"上田市菅平高原の豊かな自然の中で採れる山菜や、季節の風景を写真でご紹介します。",
-                    h1:"山菜ギャラリー",
-                    h2:"上田市菅平高原の山菜の写真",
-                    text:"上田市菅平高原で出会う山菜や、季節ごとに変化する自然の様子をご紹介します。",
-                    ogImage:"https://tt-farm.com/images/sansai.jpg"
-                },
-
-                chrysanthemum:{
-                    title:"小菊ギャラリー｜T.Tファーム｜長野市篠ノ井",
-                    description:"長野市篠ノ井で育てる小菊の栽培風景や開花の様子を、T.Tファームの写真でご紹介します。",
-                    h1:"小菊ギャラリー",
-                    h2:"長野市篠ノ井で育てる小菊の写真",
-                    text:"長野市篠ノ井で育てている小菊の成長や開花、農作業の様子をご紹介します。",
-                    ogImage:"https://tt-farm.com/images/chrysanthemum.jpg"
-                },
-
-                sunflower:{
-                    title:"ひまわりギャラリー｜T.Tファーム｜長野市篠ノ井",
-                    description:"長野市篠ノ井で育てるひまわりの成長や開花の様子を、写真でご紹介します。",
-                    h1:"ひまわりギャラリー",
-                    h2:"長野市篠ノ井で育てるひまわりの写真",
-                    text:"長野市篠ノ井で育てているひまわりの成長や、畑いっぱいに咲く花の様子をご紹介します。",
-                    ogImage:"https://tt-farm.com/images/sunflower.jpg"
-                },
-
+            
                 wheat:{
                     title:"小麦ギャラリー｜T.Tファーム｜長野市若穂・篠ノ井",
                     description:"長野市若穂・篠ノ井で育てる小麦の栽培風景や成長の様子を、写真でご紹介します。",
@@ -609,6 +436,51 @@
                     h2:"長野市若穂・篠ノ井で育てる大豆の写真",
                     text:"長野市若穂・篠ノ井で育てている大豆の成長や収穫、畑での農作業をご紹介します。",
                     ogImage:"https://tt-farm.com/images/soybean.jpg"
+                },
+
+                rice:{
+                    title:"米ギャラリー｜T.Tファーム｜長野市篠ノ井・須坂市",
+                    description:"長野市篠ノ井・須坂市で育てるコシヒカリ・つきあかりなどの米の栽培風景や成長の様子を写真でご紹介します。",
+                    h1:"米ギャラリー",
+                    h2:"長野市篠ノ井・須坂市で育てる米の写真",
+                    text:"長野市篠ノ井・須坂市で、コシヒカリ・つきあかりなどの米を育てています。田植えから生育、稲刈りまでの様子をご紹介します。",
+                    ogImage:"https://tt-farm.com/images/rice.jpg"
+                },
+
+                peach:{
+                    title:"ももギャラリー｜T.Tファーム｜長野市篠ノ井",
+                    description:"長野市篠ノ井で育てる、なつっこ（白桃）・黄金桃（黄桃）の栽培風景や成長の様子を、写真でご紹介します。",
+                    h1:"ももギャラリー",
+                    h2:"長野市篠ノ井で育てるももの写真",
+                    text:"長野市篠ノ井で、なつっこ（白桃）・黄金桃（黄桃）を育てています。花から実の成長、色づき、収穫までの様子をご紹介します。",
+                    ogImage:"https://tt-farm.com/images/peach.jpg"
+                },
+
+                sansai:{
+                    title:"山菜ギャラリー｜T.Tファーム｜上田市菅平高原",
+                    description:"上田市菅平高原の豊かな自然の中で採れるコシアブラ、タラノメ、こごみ、ウド、ふきなどの春の山菜や、季節の風景を写真でご紹介します。",
+                    h1:"山菜ギャラリー",
+                    h2:"上田市菅平高原の山菜の写真",
+                    text:"上田市菅平高原で出会うコシアブラ、タラノメ、こごみ、ウド、ふきなどの春の山菜や、季節ごとに変化する自然の様子をご紹介します。",
+                    ogImage:"https://tt-farm.com/images/sansai.jpg"
+                },
+
+                chrysanthemum:{
+                    title:"小菊ギャラリー｜T.Tファーム｜長野市篠ノ井",
+                    description:"長野市篠ノ井で育てる小菊、赤魚・やよい・ふなじ・さざ波の栽培風景や開花の様子を写真でご紹介します。",
+                    h1:"小菊ギャラリー",
+                    h2:"長野市篠ノ井で育てる小菊の写真",
+                    text:"長野市篠ノ井で、赤魚（赤）・やよい（赤）・ふなじ（黄）・さざ波（白）などの小菊を育てています。成長や開花、収穫までの様子をご紹介します。",
+                    ogImage:"https://tt-farm.com/images/chrysanthemum.jpg"
+                },
+
+                sunflower:{
+                    title:"ひまわりギャラリー｜T.Tファーム｜長野市篠ノ井",
+                    description:"長野市篠ノ井で育てるサンリッチオレンジ・サンリッチレモンなどのひまわりの成長や開花の様子を写真でご紹介します。",
+                    h1:"ひまわりギャラリー",
+                    h2:"長野市篠ノ井で育てるひまわりの写真",
+                    text:"長野市篠ノ井で、サンリッチオレンジ・サンリッチレモンなどのひまわりを育てています。成長から開花、畑いっぱいに咲く花の様子をご紹介します。",
+                    ogImage:"https://tt-farm.com/images/sunflower.jpg"
                 },
 
                 products:{
@@ -674,7 +546,7 @@
 
                 document.querySelector('meta[name="description"]').setAttribute(
                     "content",
-                    "T.Tファームのギャラリーです。長野県・信州で育てるぶどう、原木しいたけ、米、もも、山菜、小菊、ひまわり、小麦、大豆の写真や農園で出会った生き物をご紹介します。"
+                    "T.Tファームのギャラリーです。長野県・信州で育てるぶどう、原木しいたけ、小麦、大豆、米、もも、山菜、小菊、ひまわりの写真や農園で出会った生き物をご紹介します。"
                 );
 
                 document.querySelector('link[rel="canonical"]')
@@ -685,7 +557,7 @@
 
                 document.querySelector('meta[property="og:description"]').setAttribute(
                     "content",
-                    "ぶどう、原木しいたけ、米、もも、山菜、小菊、ひまわり、小麦、大豆の栽培風景や、農園で出会った生き物をご紹介します。"
+                    "ぶどう、原木しいたけ、小麦、大豆、米、もも、山菜、小菊、ひまわりの栽培風景や、農園で出会った生き物をご紹介します。"
                 );
 
                 document.querySelector('meta[property="og:url"]')
@@ -731,6 +603,7 @@
                 const title = document.querySelector(".page-title");
                 const description = document.getElementById("gallery-description");
                 resetGallerySeo();
+                resetGalleryBreadcrumb();
                 title.textContent = "ギャラリー";
                 description.textContent = "T.Tファームで育てている作物や、農園で出会った生き物、信州の自然を写真でご紹介します。気になるカテゴリーを選んでご覧ください。";
                 history.replaceState({},"","gallery.html");
@@ -752,19 +625,19 @@
                     if(!cover){
                         gallery.innerHTML += `
                             <div class="photo-card empty-card">
-                                <button class="category-only" onclick="showGallery('${category}')">
+                                <a class="category-only" href="gallery.html?category=${encodeURIComponent(category)}">
                                     ${categoryNames[category]}
-                                </button>
+                                </a>
                             </div>
                         `;
                         return;
                     }
 
                     gallery.innerHTML += `
-                        <div class="photo-card category-card" onclick="showGallery('${category}')">
+                        <a class="photo-card category-card" href="gallery.html?category=${encodeURIComponent(category)}">
                             <img src="${cover.url}" alt="${categoryNames[category]}の写真">
                             <p>${categoryNames[category]}</p>
-                        </div>
+                        </a>
                     `;
                 });
             }
@@ -783,6 +656,8 @@
                     document.getElementById("gallery-description");
 
                 updateCategorySeo(category);
+
+                updateGalleryBreadcrumb(category);
 
                 title.textContent = seo.h1;
                 description.textContent = seo.text;
@@ -909,14 +784,7 @@
 
                     console.error(error);
                 });
-            }
-                
-                         
-            
-            function toggleMenu(){
-                const menu = document.getElementById("nav-menu");
-                menu.classList.toggle("open");
-            }
+            }          
 
             let currentPhotos = [];
             let currentIndex = 0;
@@ -1009,7 +877,72 @@
                 }
             }
 
+            
+
+            function updateGalleryBreadcrumb(category){
+                const categoryWrap = document.getElementById("breadcrumb-category-wrap");
+                const categoryText = document.getElementById("breadcrumb-category");
+                const label = categoryNames[category];
+                categoryText.textContent = label;
+                categoryWrap.style.display = "inline";
+                const categoryUrl = `https://tt-farm.com/gallery.html?category=${encodeURIComponent(category)}`;
+                const breadcrumbData = {
+                    "@context":"https://schema.org",
+                    "@type":"BreadcrumbList",
+                    "itemListElement":[
+                        {
+                            "@type":"ListItem",
+                            "position":1,
+                            "name":"ホーム",
+                            "item":"https://tt-farm.com/"
+                        },
+                        {
+                            "@type":"ListItem",
+                            "position":2,
+                            "name":"ギャラリー",
+                            "item":"https://tt-farm.com/gallery.html"
+                        },
+                        {
+                            "@type":"ListItem",
+                            "position":3,
+                            "name":label,
+                            "item":categoryUrl
+                        }
+                    ]
+                };
+                document.getElementById("breadcrumb-json").textContent = JSON.stringify(breadcrumbData);
+
+            }
+
+            function resetGalleryBreadcrumb(){
+                document.getElementById(
+                    "breadcrumb-category-wrap"
+                ).style.display = "none";
+            
+                const breadcrumbData = {
+                    "@context":"https://schema.org",
+                    "@type":"BreadcrumbList",
+                    "itemListElement":[
+                        {
+                            "@type":"ListItem",
+                            "position":1,
+                            "name":"ホーム",
+                            "item":"https://tt-farm.com/"
+                        },
+                        {
+                            "@type":"ListItem",
+                            "position":2,
+                            "name":"ギャラリー",
+                            "item":"https://tt-farm.com/gallery.html"
+                        }
+                    ]
+                };
+                document.getElementById("breadcrumb-json").textContent = JSON.stringify(breadcrumbData);
+            }
+
         </script>
+
+        <script src="js/common.js"></script>
 
     </body>
 </html>
