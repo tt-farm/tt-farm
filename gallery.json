@@ -54,7 +54,12 @@
       "isCover": true,
       "url": "https://lh3.googleusercontent.com/d/1qiD8FxH7D_wcSv9W0-cJo_4cTtssjGd4"
     },
-    "soybean": null,
+    "soybean": {
+      "name": "??????",
+      "originalName": "cover_??????.jpg",
+      "isCover": true,
+      "url": "https://lh3.googleusercontent.com/d/1AwVFWTFeD3Ia-isrD3Yx0oDoW40k3YQd"
+    },
     "sunflower": {
       "name": "????",
       "originalName": "cover_????.jpg",
@@ -148,6 +153,12 @@
       }
     ],
     "machinery": [
+      {
+        "name": "??????",
+        "originalName": "??????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1U7KKnsRQTp4BFkeT3J0W6ddKcKLvUY2S"
+      },
       {
         "name": "?????",
         "originalName": "cover_?????.jpg",
@@ -309,8 +320,21 @@
         "url": "https://lh3.googleusercontent.com/d/1qiD8FxH7D_wcSv9W0-cJo_4cTtssjGd4"
       }
     ],
-    "soybean": [],
+    "soybean": [
+      {
+        "name": "??????",
+        "originalName": "cover_??????.jpg",
+        "isCover": true,
+        "url": "https://lh3.googleusercontent.com/d/1AwVFWTFeD3Ia-isrD3Yx0oDoW40k3YQd"
+      }
+    ],
     "sunflower": [
+      {
+        "name": "????????",
+        "originalName": "????????.jpg",
+        "isCover": false,
+        "url": "https://lh3.googleusercontent.com/d/1PjqA3NCOT7KAYO3XglPfoAvbTduV8lTI"
+      },
       {
         "name": "?????",
         "originalName": "?????.jpg",
