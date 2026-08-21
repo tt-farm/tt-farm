@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>T.Tファーム | ゲーム</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S2LG05GGPD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-S2LG05GGPD');
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "ホーム",
+                "item": "https://tt-farm.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "ゲーム",
+                "item": "https://tt-farm.com/game.html"
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>
+            <span class="logo-tt">T.T</span>
+            <span class="logo-ja">ファーム</span>
+        </h1>
+        <p>ゲーム</p>
+    </header>
+
+    <button class="menu-button" onclick="toggleMenu()">≡</button>
+
+    <nav id="nav-menu">
+        <a href="index.html">ホーム</a>
+        <a href="about.html">農園紹介</a>
+        <a href="gallery.html">ギャラリー</a>
+        <a href="year.html">農家の一年</a>
+        <a href="diary.html">農園日記</a>
+        <a href="game.html">ゲーム</a>
+        <a href="event.html">イベント</a>
+        <a href="https://ttfarm.theshop.jp" target="_blank" rel="noopener noreferrer">購入（外部サイト）</a>
+        <a href="contact.html">お問い合わせ</a>
+    </nav>
+
+    <main>
+
+        <nav class="breadcrumb" aria-label="パンくずリスト">
+            <a href="index.html">ホーム</a>
+            <span>></span>
+            <span>ゲーム</span>
+        </nav>
+
+        <section class="section">
+            <h2>しいたけ菌打ちゲーム</h2>
+
+            <p>
+                原木に穴をあけ、種駒を入れて、しいたけの菌打ちに挑戦！
+            </p>
+
+            <div class="game-container">
+                <iframe
+                    src="games/shiitake-inoculation/"
+                    title="しいたけ菌打ちゲーム"
+                    allow="fullscreen"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>T.Tファームをもっと楽しむ</h2>
+
+            <div class="about-links">
+                <a href="about.html">農園紹介を見る</a>
+                <a href="gallery.html">ギャラリーを見る</a>
+                <a href="diary.html">農園日記を読む</a>
+                <a href="https://ttfarm.theshop.jp"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    オンラインショップ
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            <a href="https://lin.ee/XFZeWaB">LINE</a> |
+            <a href="https://youtube.com/channel/UCWCrfZPdQvZXiJXD6ffQQnA?si=4Xva8m6RVkRZvQrc">YouTube</a> |
+            <a href="https://ttfarm.theshop.jp"
+               target="_blank"
+               rel="noopener noreferrer">オンラインショップ</a> ｜
+            <a href="contact.html">お問い合わせ</a>
+        </p>
+
+        <p>© T.Tファーム</p>
+    </footer>
+
+    <script src="js/common.js"></script>
+
+</body>
+</html>
