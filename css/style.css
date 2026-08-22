@@ -285,6 +285,80 @@ footer a{
     }
 }
 
+/* ===== 改行させない調整・改訂版 ===== */
+
+
+/* =========================
+   PCナビ
+========================= */
+@media (min-width:769px){
+
+    #nav-menu{
+        display:flex !important;
+        justify-content:center !important;
+        align-items:center !important;
+        flex-wrap:nowrap !important;
+        width:100% !important;
+    }
+
+    #nav-menu a{
+        flex:0 0 auto !important;
+        white-space:nowrap !important;
+
+        padding-left:10px !important;
+        padding-right:10px !important;
+
+        font-size:15px !important;
+    }
+}
+
+
+/* =========================
+   スマホ
+========================= */
+@media (max-width:768px){
+
+    /* 「信州の自然の中で育てる作物」などを1行 */
+    .home-section > h2{
+        white-space:nowrap !important;
+
+        font-size:clamp(17px, 5.3vw, 22px) !important;
+        letter-spacing:-0.5px !important;
+        line-height:1.35 !important;
+
+        width:100% !important;
+        text-align:center !important;
+    }
+
+
+    /* フッターのリンクを全部1行 */
+    footer p:first-child{
+        white-space:nowrap !important;
+
+        width:100% !important;
+        max-width:100% !important;
+
+        margin-left:auto !important;
+        margin-right:auto !important;
+
+        padding-left:5px !important;
+        padding-right:5px !important;
+
+        font-size:clamp(9px, 2.7vw, 12px) !important;
+        letter-spacing:-0.5px !important;
+        line-height:1.5 !important;
+
+        text-align:center !important;
+    }
+
+    footer p:first-child a{
+        display:inline !important;
+        white-space:nowrap !important;
+        font-size:inherit !important;
+    }
+}
+
+
 /* =========================
    Godot ゲーム
 ========================= */
@@ -305,47 +379,7 @@ footer a{
     border: 0;
 }
 
-/* ===== 改行させない調整 ===== */
 
-/* PCナビ */
-@media(min-width:769px){
-
-    #nav-menu{
-        display:flex;
-        justify-content:center;
-        flex-wrap:nowrap;
-    }
-
-    #nav-menu a{
-        white-space:nowrap;
-        padding-left:14px;
-        padding-right:14px;
-        font-size:16px;
-    }
-}
-
-
-/* スマホ */
-@media(max-width:768px){
-
-    /* 「信州の自然の中で育てる作物」を1行 */
-    .home-section > h2{
-        white-space:nowrap;
-        font-size:22px;
-        letter-spacing:0;
-    }
-
-    /* フッターを全部1行 */
-    footer p:first-child{
-        white-space:nowrap;
-        font-size:13px;
-        letter-spacing:-0.5px;
-    }
-
-    footer p:first-child a{
-        white-space:nowrap;
-    }
-}
 
 /* スマホ・タブレットを横向きにしたとき */
 @media (orientation: landscape) and (pointer: coarse) {
