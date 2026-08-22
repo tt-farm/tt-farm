@@ -185,11 +185,41 @@
 
             .link-card{
                 cursor:pointer;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
             }
 
             .link-card:hover{
                 transform:translateY(-4px);
-                transition:0.3s;
+                box-shadow:0 8px 20px rgba(0,0,0,0.12);
+            }
+
+            .card img.link-icon{
+                width:84px;
+                height:84px;
+                object-fit:contain;
+                margin:14px auto 0;
+            }
+
+            .link-card h3{
+                white-space:nowrap;
+                margin:0;
+            }
+
+            @media(max-width:600px){
+
+                .card img.link-icon{
+                    width:72px;
+                    height:72px;
+                    margin-top:12px auto 0;
+                }
+
+                .link-card h3{
+                    margin:6px 0 3px;
+                }
+
+                .link-card p{
+                    padding:0 16px 14px;
+                }
             }
 
             @media(max-width:900px){
@@ -467,36 +497,59 @@
 
             <div class="cards">
                 <a class="card link-card" href="about.html">
-                    <h3>農園紹介</h3>
-                    <p>
-                        若手農家が作物や自然と向き合う思い、
-                        T.Tファームの農業について紹介します。
-                    </p>
+                    <img class="link-icon" src="images/icon-about.png" alt="">
+                    
+                        <h3>農園紹介</h3>
+                        <p>
+                            若手農家が作物や自然と向き合う思い、
+                            T.Tファームの農業について紹介します。
+                        </p>
+                    
                 </a>
 
                 <a class="card link-card" href="gallery.html">
-                    <h3>ギャラリー</h3>
-                    <p>
-                        作物の成長、農園の風景、
-                        カエルやサワガニなどの生き物を写真でご覧いただけます。
-                    </p>
+                    <img class="link-icon" src="images/icon-gallery.png" alt="">
+                    
+                        <h3>ギャラリー</h3>
+                        <p>
+                            作物の成長、農園の風景、
+                            カエルやサワガニなどの生き物を写真でご覧いただけます。
+                        </p>
+                    
                 </a>
 
                 <a class="card link-card" href="diary.html">
-                    <h3>農園日記</h3>
-                    <p>
-                        ぶどうや原木しいたけ、米、小麦などの栽培記録と、
-                        土まみれの農作業の日常をお届けします。
-                    </p>
+                    <img class="link-icon" src="images/icon-diary.png" alt="">
+                    
+                        <h3>農園日記</h3>
+                        <p>
+                            ぶどうや原木しいたけ、米、小麦などの栽培記録と、
+                            農作業の日常をお届けします。
+                        </p>
+                    
+                </a>
+
+                <a class="card link-card" href="game.html">
+                    <img class="link-icon" src="images/icon-game.png" alt="">
+                    
+                        <h3>ゲーム</h3>
+                        <p>
+                            農作業をテーマにしたゲームで、
+                            T.Tファームの農業を楽しく体験できます。
+                        </p>
+                    
                 </a>
 
                 <a class="card link-card" href="https://ttfarm.theshop.jp" target="_blank" rel="noopener noreferrer">
-                    <h3>信州の農産物を購入する</h3>
-                    <p>
-                        T.Tファームで育てた長野県産・信州産の季節の農産物を、
-                        オンラインショップから産地直送でお届けします。
-                        通販・お取り寄せはこちらからご覧いただけます。
-                    </p>
+                    <img class="link-icon" src="images/icon-shop.png" alt="">
+                    
+                        <h3>オンラインショップ</h3>
+                        <p>
+                            T.Tファームで育てた長野県産・信州産の季節の農産物を、
+                            産地直送でお届けします。
+                            通販・お取り寄せはこちらから。
+                        </p>
+                    
                 </a>
             </div>
 
