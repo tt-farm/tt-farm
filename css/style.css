@@ -305,6 +305,48 @@ footer a{
     border: 0;
 }
 
+/* ===== 改行させない調整 ===== */
+
+/* PCナビ */
+@media(min-width:769px){
+
+    #nav-menu{
+        display:flex;
+        justify-content:center;
+        flex-wrap:nowrap;
+    }
+
+    #nav-menu a{
+        white-space:nowrap;
+        padding-left:14px;
+        padding-right:14px;
+        font-size:16px;
+    }
+}
+
+
+/* スマホ */
+@media(max-width:768px){
+
+    /* 「信州の自然の中で育てる作物」を1行 */
+    .home-section > h2{
+        white-space:nowrap;
+        font-size:22px;
+        letter-spacing:0;
+    }
+
+    /* フッターを全部1行 */
+    footer p:first-child{
+        white-space:nowrap;
+        font-size:13px;
+        letter-spacing:-0.5px;
+    }
+
+    footer p:first-child a{
+        white-space:nowrap;
+    }
+}
+
 /* スマホ・タブレットを横向きにしたとき */
 @media (orientation: landscape) and (pointer: coarse) {
 
