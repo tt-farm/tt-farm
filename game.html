@@ -126,35 +126,71 @@
         }
 
 
-        /* スマホ */
+        /* =========================
+   スマホ
+========================= */
 
-        @media(max-width:600px) {
+@media(max-width:600px){
 
-            .game-message,
-            .real-farm {
-                padding: 20px;
-            }
+    .game-message,
+    .real-farm{
+        padding:20px;
+    }
 
-            .game-notice {
-                align-items: flex-start;
-            }
+    /* ページ最上部のタイトル */
+    .page-title{
+        font-size:clamp(25px, 7vw, 28px);
+        line-height:1.3;
+        text-align:center;
+    }
 
-        }
-        @media(max-width:600px){
+    /* 各カードの見出し
+       入るものはできるだけ1行にする */
+    .section h2{
+        font-size:clamp(21px, 5.8vw, 26px);
+        line-height:1.35;
+        word-break:auto-phrase;
+    }
 
-            .shiitake-links{
-                flex-direction:column;
-                align-items:center;
-            }
+    /* 「遊びながら農業をもっと身近に」は1行 */
+    .section:nth-of-type(3) h2{
+        white-space:nowrap;
+        font-size:clamp(19px, 5.2vw, 24px);
+    }
 
-            .shiitake-links a{
-                width:90%;
-                max-width:320px;
-                text-align:center;
-                white-space:nowrap;
-            }
+    /* スマホ横向き案内 */
+    .game-notice{
+        align-items:flex-start;
+        gap:8px;
+        padding:14px 12px;
+    }
 
-        }
+    .game-notice-icon{
+        font-size:24px;
+    }
+
+    /* 「横向き」は途中で切らない */
+    .game-notice p strong{
+        white-space:nowrap;
+    }
+
+    /* しいたけへの内部リンク */
+    .section:nth-of-type(2) .about-links{
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        gap:12px;
+    }
+
+    .section:nth-of-type(2) .about-links a{
+        width:100%;
+        max-width:none;
+        box-sizing:border-box;
+        margin:0;
+        text-align:center;
+        white-space:nowrap;
+    }
+}
 
     </style>
 
