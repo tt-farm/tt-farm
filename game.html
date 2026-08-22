@@ -1,25 +1,165 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>T.Tファーム | ゲーム</title>
+    <title>ゲーム｜T.Tファーム｜無料で遊べる農業体験ゲーム</title>
 
+    <meta name="description"
+    content="現役農家が実際の農作業から着想を得て一から作った、無料で遊べる農業ゲーム・農業体験ミニゲーム。ブラウザで、子どもから大人まで農作業を楽しく体験できます。しいたけ菌打ちゲームなどを公開しています。">
+
+    <link rel="canonical" href="https://tt-farm.com/game.html">
+
+    <!-- OGP -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="T.Tファーム">
+    <meta property="og:title" content="ゲーム｜T.Tファーム｜無料で遊べる農業体験ゲーム">
+    <meta property="og:description"
+    content="実際の農作業から着想を得て、現役農家が一から作った手作り農業ゲーム。ブラウザで無料で遊びながら、農業や農作業を楽しく体験できます。">
+    <meta property="og:url" content="https://tt-farm.com/game.html">
+    <meta property="og:image" content="https://tt-farm.com/images/shiitake.jpg">
+    <meta property="og:locale" content="ja_JP">
+
+    <!-- X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ゲーム｜T.Tファーム｜無料で遊べる農業体験ゲーム">
+    <meta name="twitter:description"
+    content="現役農家が一から作った、実際の農作業をもとにした無料の農業体験ゲーム。">
+    <meta name="twitter:image" content="https://tt-farm.com/images/shiitake.jpg">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* =========================
+           ゲームページ
+        ========================= */
+
+        .page-title {
+            text-align: center;
+            color: #33691E;
+            margin-bottom: 25px;
+        }
+
+        .game-introduction {
+            max-width: 850px;
+            margin: 0 auto 35px;
+            line-height: 2;
+        }
+
+
+        /* 現役農家が作ったゲーム */
+
+        .game-message {
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 25px 30px;
+            background: #f7f9f2;
+            border-radius: 12px;
+            line-height: 1.9;
+        }
+
+        .game-message strong {
+            color: #5f8138;
+        }
+
+        .game-message p {
+            margin-bottom: 0;
+        }
+
+
+        /* スマホ横向き案内 */
+
+        .game-notice {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            max-width: 700px;
+            margin: 22px auto;
+            padding: 14px 18px;
+            background: #f3f7ed;
+            border: 1px solid #d6e3c5;
+            border-radius: 12px;
+        }
+
+        .game-notice-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .game-notice strong {
+            color: #5f8138;
+        }
+
+        .game-notice p {
+            margin: 3px 0 0;
+            line-height: 1.6;
+        }
+
+
+        /* 実際の農作業 */
+
+        .real-farm {
+            max-width: 850px;
+            margin: 35px auto 0;
+            padding: 25px 30px;
+            background: #fff;
+            border-left: 5px solid #6d8f3f;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+        }
+
+        .real-farm h3 {
+            margin-top: 0;
+            color: #6d8f3f;
+        }
+
+        .real-farm p {
+            line-height: 1.9;
+        }
+
+
+        /* スマホ */
+
+        @media(max-width:600px) {
+
+            .game-message,
+            .real-farm {
+                padding: 20px;
+            }
+
+            .game-notice {
+                align-items: flex-start;
+            }
+
+        }
+
+    </style>
+
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-S2LG05GGPD"></script>
+
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
         gtag('config', 'G-S2LG05GGPD');
     </script>
 
+
+    <!-- パンくず構造化データ -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -40,21 +180,38 @@
         ]
     }
     </script>
+
 </head>
+
 
 <body>
 
+
+    <!-- =========================
+         ヘッダー
+    ========================== -->
+
     <header>
-        <h1>
+
+        <div class="site-logo">
             <span class="logo-tt">T.T</span>
             <span class="logo-ja">ファーム</span>
-        </h1>
+        </div>
+
         <p>ゲーム</p>
+
     </header>
+
 
     <button class="menu-button" onclick="toggleMenu()">≡</button>
 
+
+    <!-- =========================
+         ナビ
+    ========================== -->
+
     <nav id="nav-menu">
+
         <a href="index.html">ホーム</a>
         <a href="about.html">農園紹介</a>
         <a href="gallery.html">ギャラリー</a>
@@ -62,66 +219,329 @@
         <a href="diary.html">農園日記</a>
         <a href="game.html">ゲーム</a>
         <a href="event.html">イベント</a>
-        <a href="https://ttfarm.theshop.jp" target="_blank" rel="noopener noreferrer">購入（外部サイト）</a>
+
+        <a href="https://ttfarm.theshop.jp"
+           target="_blank"
+           rel="noopener noreferrer">
+            購入（外部サイト）
+        </a>
+
         <a href="contact.html">お問い合わせ</a>
+
     </nav>
+
 
     <main>
 
+
+        <!-- パンくず -->
+
         <nav class="breadcrumb" aria-label="パンくずリスト">
+
             <a href="index.html">ホーム</a>
             <span>></span>
             <span>ゲーム</span>
+
         </nav>
 
-        <section class="section">
-            <h2>しいたけ菌打ちゲーム</h2>
+
+        <!-- =========================
+             ゲームページ紹介
+        ========================== -->
+
+        <h1 class="page-title">
+            無料で遊べる農業体験ゲーム
+        </h1>
+
+
+        <p class="game-introduction">
+
+            T.Tファームでは、実際の農作業から着想を得た
+            オリジナルの農業ゲーム・ミニゲームを無料で公開しています。
+
+            ブラウザですぐに遊ぶことができ、
+            子どもから大人まで、ゲームを通して農作業や農業のおもしろさを
+            楽しく体験できます。
+
+        </p>
+
+
+        <!-- =========================
+             手作りゲーム
+        ========================== -->
+
+        <div class="game-message">
+
+            <strong>
+                現役農家が、一からつくる手作り農業ゲーム。
+            </strong>
 
             <p>
-                原木に穴をあけ、種駒を入れて、しいたけの菌打ちに挑戦！
+                実際の農作業から着想を得て、
+                現役農家ならではの視点をゲームにしました。
+                農産物と同じように、
+                ひとつひとつ心をこめて手作りしています。
             </p>
 
+        </div>
+
+
+        <!-- =========================
+             しいたけ菌打ちゲーム
+        ========================== -->
+
+        <section class="section">
+
+            <h2>
+                原木しいたけの菌打ちを体験！
+                しいたけ菌打ちゲーム
+            </h2>
+
+
+            <p>
+                原木しいたけ栽培の最初の大切な農作業
+                「菌打ち」を、無料のミニゲームで体験できます。
+
+                原木にドリルで穴をあけ、
+                種駒を入れ、
+                木槌で打ち込んで菌打ちに挑戦しましょう。
+            </p>
+
+
+            <p>
+                実際の原木しいたけ栽培をもとに作った、
+                現役農家ならではの農業体験ゲームです。
+            </p>
+
+
+            <!-- スマホ案内 -->
+
+            <div class="game-notice">
+
+                <span class="game-notice-icon">📱</span>
+
+                <div>
+
+                    <strong>
+                        スマートフォンで遊ぶ方へ
+                    </strong>
+
+                    <p>
+                        ゲームはスマートフォンを
+                        <strong>横向き</strong>
+                        にしてお楽しみください。
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ゲーム -->
+
             <div class="game-container">
+
                 <iframe
                     src="games/shiitake-inoculation/"
-                    title="しいたけ菌打ちゲーム"
+                    title="原木しいたけの菌打ちを無料で体験できる農業ゲーム"
                     allow="fullscreen"
                     allowfullscreen>
                 </iframe>
+
             </div>
+
+
+            <!-- =========================
+                 実際の農作業
+            ========================== -->
+
+            <div class="real-farm">
+
+                <h3>
+                    実際の農作業では？
+                </h3>
+
+
+                <p>
+                    ゲームでは1本の原木に菌打ちをしますが、
+                    実際のT.Tファームでは、
+                    一度に<strong>約1,000本</strong>の原木に菌打ちをします。
+                </p>
+
+
+                <p>
+                    2人で作業しても、
+                    菌打ちを終えるまでに
+                    <strong>約2日</strong>かかります。
+                </p>
+
+
+                <p>
+                    ゲームで体験する
+                    「穴をあける」
+                    「種駒を入れる」
+                    「木槌で打ち込む」
+                    という農作業を、
+                    実際の農園では何百回、何千回と繰り返しています。
+                </p>
+
+            </div>
+
         </section>
 
+
+        <!-- =========================
+             本物のしいたけへ
+        ========================== -->
+
         <section class="section">
-            <h2>T.Tファームをもっと楽しむ</h2>
+
+            <h2>
+                ゲームのあとは、本物の原木しいたけも見てみよう
+            </h2>
+
+
+            <p>
+                農業ゲームで菌打ちを体験したあとは、
+                T.Tファームで実際に育てている原木しいたけや、
+                本物の農作業の様子もぜひご覧ください。
+            </p>
+
 
             <div class="about-links">
-                <a href="about.html">農園紹介を見る</a>
-                <a href="gallery.html">ギャラリーを見る</a>
-                <a href="diary.html">農園日記を読む</a>
+
+                <a href="gallery.html?category=shiitake">
+                    原木しいたけの写真を見る
+                </a>
+
+                <a href="diary.html?category=しいたけ">
+                    原木しいたけの農園日記を見る
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             農業ゲームについて
+        ========================== -->
+
+        <section class="section">
+
+            <h2>
+                遊びながら農業をもっと身近に
+            </h2>
+
+
+            <p>
+                農業には、
+                作物ごとにさまざまな農作業があります。
+
+                T.Tファームでは、
+                そんな農作業の特徴やおもしろさを、
+                ミニゲームとして楽しく体験できるようにしています。
+            </p>
+
+
+            <p>
+                ブラウザで気軽に遊べる無料の農業体験ゲームを通して、
+                子どもにも大人にも、
+
+                「農業ってこんなことをしているんだ」
+
+                「作物ってこんなふうに育てるんだ」
+
+                と感じてもらえる場所を目指しています。
+            </p>
+
+
+            <p>
+                今後も、
+                さまざまな作物や農作業をテーマにした
+                オリジナルゲームを少しずつ増やしていきます。
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             内部リンク
+        ========================== -->
+
+        <section class="section">
+
+            <h2>
+                T.Tファームをもっと楽しむ
+            </h2>
+
+
+            <div class="about-links">
+
+                <a href="about.html">
+                    農園紹介を見る
+                </a>
+
+                <a href="gallery.html">
+                    ギャラリーを見る
+                </a>
+
+                <a href="diary.html">
+                    農園日記を読む
+                </a>
+
                 <a href="https://ttfarm.theshop.jp"
                    target="_blank"
                    rel="noopener noreferrer">
                     オンラインショップ
                 </a>
+
             </div>
+
         </section>
+
 
     </main>
 
+
+    <!-- =========================
+         フッター
+    ========================== -->
+
     <footer>
+
         <p>
-            <a href="https://lin.ee/XFZeWaB">LINE</a> |
-            <a href="https://youtube.com/channel/UCWCrfZPdQvZXiJXD6ffQQnA?si=4Xva8m6RVkRZvQrc">YouTube</a> |
+
+            <a href="https://lin.ee/XFZeWaB">
+                LINE
+            </a> |
+
+            <a href="https://youtube.com/channel/UCWCrfZPdQvZXiJXD6ffQQnA?si=4Xva8m6RVkRZvQrc">
+                YouTube
+            </a> |
+
             <a href="https://ttfarm.theshop.jp"
                target="_blank"
-               rel="noopener noreferrer">オンラインショップ</a> ｜
-            <a href="contact.html">お問い合わせ</a>
+               rel="noopener noreferrer">
+                オンラインショップ
+            </a> ｜
+
+            <a href="contact.html">
+                お問い合わせ
+            </a>
+
         </p>
 
-        <p>© T.Tファーム</p>
+
+        <p>
+            © T.Tファーム
+        </p>
+
     </footer>
 
+
     <script src="js/common.js"></script>
+
 
 </body>
 </html>
