@@ -289,6 +289,12 @@ footer a{
         align-items:center;
         justify-content:center;
         text-align:center;
+        /* ボタン内の文字を改行しない */
+        white-space:nowrap;
+
+        /* 狭いスマホでは少しだけ文字を小さくする */
+        font-size:clamp(13px, 3.6vw, 16px);
+    
     }
 }
 
